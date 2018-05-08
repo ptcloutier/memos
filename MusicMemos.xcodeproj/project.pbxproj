@@ -1,0 +1,379 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A78A720A20A1DAF500FF9D0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A720920A1DAF500FF9D0B /* AppDelegate.swift */; };
+		A78A720C20A1DAF500FF9D0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A720B20A1DAF500FF9D0B /* ViewController.swift */; };
+		A78A720F20A1DAF500FF9D0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78A720D20A1DAF500FF9D0B /* Main.storyboard */; };
+		A78A721120A1DAF700FF9D0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A78A721020A1DAF700FF9D0B /* Assets.xcassets */; };
+		A78A721420A1DAF700FF9D0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78A721220A1DAF700FF9D0B /* LaunchScreen.storyboard */; };
+		A78A722220A1DB9600FF9D0B /* RecordingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A78A721B20A1DB9500FF9D0B /* RecordingsTableViewCell.xib */; };
+		A78A722320A1DB9600FF9D0B /* RecordingControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A721C20A1DB9500FF9D0B /* RecordingControlsView.swift */; };
+		A78A722420A1DB9600FF9D0B /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = A78A721D20A1DB9500FF9D0B /* fonts */; };
+		A78A722520A1DB9600FF9D0B /* RecordButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A721E20A1DB9500FF9D0B /* RecordButtonDelegate.swift */; };
+		A78A722620A1DB9600FF9D0B /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A721F20A1DB9500FF9D0B /* AudioManager.swift */; };
+		A78A722720A1DB9600FF9D0B /* RecordingControlsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A78A722020A1DB9500FF9D0B /* RecordingControlsView.xib */; };
+		A78A722820A1DB9600FF9D0B /* RecordingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A722120A1DB9600FF9D0B /* RecordingsTableViewCell.swift */; };
+		A78A723020A1DC1A00FF9D0B /* playBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = A78A722F20A1DC1A00FF9D0B /* playBtn.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A78A720620A1DAF500FF9D0B /* MusicMemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicMemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A78A720920A1DAF500FF9D0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A78A720B20A1DAF500FF9D0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A78A720E20A1DAF500FF9D0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A78A721020A1DAF700FF9D0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A78A721320A1DAF700FF9D0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A78A721520A1DAF700FF9D0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A78A721B20A1DB9500FF9D0B /* RecordingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordingsTableViewCell.xib; sourceTree = "<group>"; };
+		A78A721C20A1DB9500FF9D0B /* RecordingControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingControlsView.swift; sourceTree = "<group>"; };
+		A78A721D20A1DB9500FF9D0B /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		A78A721E20A1DB9500FF9D0B /* RecordButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButtonDelegate.swift; sourceTree = "<group>"; };
+		A78A721F20A1DB9500FF9D0B /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		A78A722020A1DB9500FF9D0B /* RecordingControlsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordingControlsView.xib; sourceTree = "<group>"; };
+		A78A722120A1DB9600FF9D0B /* RecordingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingsTableViewCell.swift; sourceTree = "<group>"; };
+		A78A722F20A1DC1A00FF9D0B /* playBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBtn.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A78A720320A1DAF500FF9D0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A78A71FD20A1DAF500FF9D0B = {
+			isa = PBXGroup;
+			children = (
+				A78A720820A1DAF500FF9D0B /* MusicMemos */,
+				A78A720720A1DAF500FF9D0B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A78A720720A1DAF500FF9D0B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A78A720620A1DAF500FF9D0B /* MusicMemos.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A78A720820A1DAF500FF9D0B /* MusicMemos */ = {
+			isa = PBXGroup;
+			children = (
+				A78A720920A1DAF500FF9D0B /* AppDelegate.swift */,
+				A78A720B20A1DAF500FF9D0B /* ViewController.swift */,
+				A78A720D20A1DAF500FF9D0B /* Main.storyboard */,
+				A78A721F20A1DB9500FF9D0B /* AudioManager.swift */,
+				A78A723120A1DC3000FF9D0B /* icons */,
+				A78A721D20A1DB9500FF9D0B /* fonts */,
+				A78A721E20A1DB9500FF9D0B /* RecordButtonDelegate.swift */,
+				A78A721C20A1DB9500FF9D0B /* RecordingControlsView.swift */,
+				A78A722020A1DB9500FF9D0B /* RecordingControlsView.xib */,
+				A78A722120A1DB9600FF9D0B /* RecordingsTableViewCell.swift */,
+				A78A721B20A1DB9500FF9D0B /* RecordingsTableViewCell.xib */,
+				A78A721020A1DAF700FF9D0B /* Assets.xcassets */,
+				A78A721220A1DAF700FF9D0B /* LaunchScreen.storyboard */,
+				A78A721520A1DAF700FF9D0B /* Info.plist */,
+			);
+			path = MusicMemos;
+			sourceTree = "<group>";
+		};
+		A78A723120A1DC3000FF9D0B /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				A78A722F20A1DC1A00FF9D0B /* playBtn.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A78A720520A1DAF500FF9D0B /* MusicMemos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A78A721820A1DAF700FF9D0B /* Build configuration list for PBXNativeTarget "MusicMemos" */;
+			buildPhases = (
+				A78A720220A1DAF500FF9D0B /* Sources */,
+				A78A720320A1DAF500FF9D0B /* Frameworks */,
+				A78A720420A1DAF500FF9D0B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MusicMemos;
+			productName = MusicMemos;
+			productReference = A78A720620A1DAF500FF9D0B /* MusicMemos.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A78A71FE20A1DAF500FF9D0B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Perrin Cloutier";
+				TargetAttributes = {
+					A78A720520A1DAF500FF9D0B = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = A78A720120A1DAF500FF9D0B /* Build configuration list for PBXProject "MusicMemos" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A78A71FD20A1DAF500FF9D0B;
+			productRefGroup = A78A720720A1DAF500FF9D0B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A78A720520A1DAF500FF9D0B /* MusicMemos */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A78A720420A1DAF500FF9D0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A78A721420A1DAF700FF9D0B /* LaunchScreen.storyboard in Resources */,
+				A78A722420A1DB9600FF9D0B /* fonts in Resources */,
+				A78A721120A1DAF700FF9D0B /* Assets.xcassets in Resources */,
+				A78A720F20A1DAF500FF9D0B /* Main.storyboard in Resources */,
+				A78A723020A1DC1A00FF9D0B /* playBtn.png in Resources */,
+				A78A722720A1DB9600FF9D0B /* RecordingControlsView.xib in Resources */,
+				A78A722220A1DB9600FF9D0B /* RecordingsTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A78A720220A1DAF500FF9D0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A78A720C20A1DAF500FF9D0B /* ViewController.swift in Sources */,
+				A78A722820A1DB9600FF9D0B /* RecordingsTableViewCell.swift in Sources */,
+				A78A722320A1DB9600FF9D0B /* RecordingControlsView.swift in Sources */,
+				A78A720A20A1DAF500FF9D0B /* AppDelegate.swift in Sources */,
+				A78A722620A1DB9600FF9D0B /* AudioManager.swift in Sources */,
+				A78A722520A1DB9600FF9D0B /* RecordButtonDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A78A720D20A1DAF500FF9D0B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A78A720E20A1DAF500FF9D0B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A78A721220A1DAF700FF9D0B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A78A721320A1DAF700FF9D0B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A78A721620A1DAF700FF9D0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A78A721720A1DAF700FF9D0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A78A721920A1DAF700FF9D0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LHVTYN77KH;
+				INFOPLIST_FILE = MusicMemos/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptc.MusicMemos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A78A721A20A1DAF700FF9D0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LHVTYN77KH;
+				INFOPLIST_FILE = MusicMemos/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptc.MusicMemos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A78A720120A1DAF500FF9D0B /* Build configuration list for PBXProject "MusicMemos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A78A721620A1DAF700FF9D0B /* Debug */,
+				A78A721720A1DAF700FF9D0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A78A721820A1DAF700FF9D0B /* Build configuration list for PBXNativeTarget "MusicMemos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A78A721920A1DAF700FF9D0B /* Debug */,
+				A78A721A20A1DAF700FF9D0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A78A71FE20A1DAF500FF9D0B /* Project object */;
+}
