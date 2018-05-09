@@ -22,6 +22,11 @@
 		A78A723020A1DC1A00FF9D0B /* playBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = A78A722F20A1DC1A00FF9D0B /* playBtn.png */; };
 		A7B8E42C20A299F800B11BAA /* WaveformTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8E42A20A299F800B11BAA /* WaveformTableViewCell.swift */; };
 		A7B8E42D20A299F800B11BAA /* WaveformTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B8E42B20A299F800B11BAA /* WaveformTableViewCell.xib */; };
+		A7B8E42F20A2B7F200B11BAA /* ContainerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8E42E20A2B7F200B11BAA /* ContainerCollectionViewController.swift */; };
+		A7B8E43120A2B93D00B11BAA /* FirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8E43020A2B93D00B11BAA /* FirstCollectionViewCell.swift */; };
+		A7B8E43320A2B94900B11BAA /* SecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8E43220A2B94900B11BAA /* SecondCollectionViewCell.swift */; };
+		A7B8E43520A2B95300B11BAA /* ThirdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8E43420A2B95300B11BAA /* ThirdCollectionViewCell.swift */; };
+		A7B8E43720A2BE1B00B11BAA /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8E43620A2BE1B00B11BAA /* FlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,11 @@
 		A78A722F20A1DC1A00FF9D0B /* playBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBtn.png; sourceTree = "<group>"; };
 		A7B8E42A20A299F800B11BAA /* WaveformTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformTableViewCell.swift; sourceTree = "<group>"; };
 		A7B8E42B20A299F800B11BAA /* WaveformTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaveformTableViewCell.xib; sourceTree = "<group>"; };
+		A7B8E42E20A2B7F200B11BAA /* ContainerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCollectionViewController.swift; sourceTree = "<group>"; };
+		A7B8E43020A2B93D00B11BAA /* FirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionViewCell.swift; sourceTree = "<group>"; };
+		A7B8E43220A2B94900B11BAA /* SecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCell.swift; sourceTree = "<group>"; };
+		A7B8E43420A2B95300B11BAA /* ThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCollectionViewCell.swift; sourceTree = "<group>"; };
+		A7B8E43620A2BE1B00B11BAA /* FlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,12 +84,15 @@
 		A78A720820A1DAF500FF9D0B /* MusicMemos */ = {
 			isa = PBXGroup;
 			children = (
+				A78A720D20A1DAF500FF9D0B /* Main.storyboard */,
 				A78A720920A1DAF500FF9D0B /* AppDelegate.swift */,
 				A78A720B20A1DAF500FF9D0B /* ViewController.swift */,
-				A78A720D20A1DAF500FF9D0B /* Main.storyboard */,
+				A7B8E43620A2BE1B00B11BAA /* FlowLayout.swift */,
+				A7B8E42E20A2B7F200B11BAA /* ContainerCollectionViewController.swift */,
+				A7B8E43020A2B93D00B11BAA /* FirstCollectionViewCell.swift */,
+				A7B8E43220A2B94900B11BAA /* SecondCollectionViewCell.swift */,
+				A7B8E43420A2B95300B11BAA /* ThirdCollectionViewCell.swift */,
 				A78A721F20A1DB9500FF9D0B /* AudioManager.swift */,
-				A78A723120A1DC3000FF9D0B /* icons */,
-				A78A721D20A1DB9500FF9D0B /* fonts */,
 				A78A721E20A1DB9500FF9D0B /* RecordButtonDelegate.swift */,
 				A78A721C20A1DB9500FF9D0B /* RecordingControlsCell.swift */,
 				A78A722020A1DB9500FF9D0B /* RecordingControlsCell.xib */,
@@ -87,6 +100,8 @@
 				A78A721B20A1DB9500FF9D0B /* RecordingsTableViewCell.xib */,
 				A7B8E42A20A299F800B11BAA /* WaveformTableViewCell.swift */,
 				A7B8E42B20A299F800B11BAA /* WaveformTableViewCell.xib */,
+				A78A723120A1DC3000FF9D0B /* icons */,
+				A78A721D20A1DB9500FF9D0B /* fonts */,
 				A78A721020A1DAF700FF9D0B /* Assets.xcassets */,
 				A78A721220A1DAF700FF9D0B /* LaunchScreen.storyboard */,
 				A78A721520A1DAF700FF9D0B /* Info.plist */,
@@ -178,11 +193,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7B8E43720A2BE1B00B11BAA /* FlowLayout.swift in Sources */,
+				A7B8E42F20A2B7F200B11BAA /* ContainerCollectionViewController.swift in Sources */,
+				A7B8E43520A2B95300B11BAA /* ThirdCollectionViewCell.swift in Sources */,
 				A78A720C20A1DAF500FF9D0B /* ViewController.swift in Sources */,
+				A7B8E43320A2B94900B11BAA /* SecondCollectionViewCell.swift in Sources */,
 				A78A722820A1DB9600FF9D0B /* RecordingsTableViewCell.swift in Sources */,
 				A78A722320A1DB9600FF9D0B /* RecordingControlsCell.swift in Sources */,
 				A78A720A20A1DAF500FF9D0B /* AppDelegate.swift in Sources */,
 				A78A722620A1DB9600FF9D0B /* AudioManager.swift in Sources */,
+				A7B8E43120A2B93D00B11BAA /* FirstCollectionViewCell.swift in Sources */,
 				A7B8E42C20A299F800B11BAA /* WaveformTableViewCell.swift in Sources */,
 				A78A722520A1DB9600FF9D0B /* RecordButtonDelegate.swift in Sources */,
 			);

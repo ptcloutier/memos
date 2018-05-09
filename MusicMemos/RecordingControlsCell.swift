@@ -21,8 +21,7 @@ class RecordingControlsCell: UITableViewCell {
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var doneBtn: UIButton!
     weak var recordBtnDelegate: RecordButtonDelegate?
-    var tableViewMovedDown: Bool = false
-    
+    var tableViewPosition: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -103,20 +102,20 @@ class RecordingControlsCell: UITableViewCell {
     @objc func recordBtnDidPress() {
         
         toggleTableViewPosition()
-        recordBtnDelegate?.recordButtonDidPress(sender: self.recordBtn) 
+        recordBtnDelegate?.recordButtonDidPress(sender: self.recordBtn)
         recordBtnAnimation()
     }
     
     
     func toggleTableViewPosition(){
-        
-        switch tableViewMovedDown {
-        case true:
-            recordBtnDelegate?.moveTableViewUp(sender: self.recordBtn)
-            tableViewMovedDown = false
-        case false:
+
+        switch tableViewPosition {
+        case 0:
             recordBtnDelegate?.moveTableViewDown(sender: self.recordBtn)
-            tableViewMovedDown = true
+            tableViewPosition = 1
+        default:
+            recordBtnDelegate?.moveTableViewUp(sender: self.recordBtn)
+            tableViewPosition = 0
         }
     }
     

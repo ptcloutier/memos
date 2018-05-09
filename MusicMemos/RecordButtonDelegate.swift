@@ -14,7 +14,7 @@ protocol RecordButtonDelegate: class {
     
     func doneButtonDidPress(sender: UIButton)
     
-    func moveTableViewUp(sender: UIButton)
+    func moveTableViewDown(sender: UIButton?)
     
-    func moveTableViewDown(sender: UIButton)
+    func moveTableViewUp(sender: UIButton?)
 }

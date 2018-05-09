@@ -35,20 +35,19 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordingsTableView: UITableView!
     
     var recordBtn: UIButton!
-    
+    var controlsCellIsExpanded: Bool = false
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        view.backgroundColor = UIColor.purple
         
         // Register cells
-        recordingsTableView.register(UINib.init(nibName: waveformTableViewCellNibName, bundle: nil), forCellReuseIdentifier: waveformTableViewCellReuseIdentifier)
+//        recordingsTableView.register(UINib.init(nibName: waveformTableViewCellNibName, bundle: nil), forCellReuseIdentifier: waveformTableViewCellReuseIdentifier)
         recordingsTableView.register(UINib.init(nibName: recordingControlsCellNibName, bundle: nil), forCellReuseIdentifier: recordingControlsCellReuseIdentifier)
         recordingsTableView.register(UINib.init(nibName: recordingsTableViewCellNibName, bundle: nil), forCellReuseIdentifier: recordingsTableViewCellReuseIdentifier)
-        
-        recordingsTableView.backgroundColor = UIColor.white
         
         
         // Setting up the audio session
@@ -64,6 +63,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
                 print("ACCEPTED")
             }
         }
+        moveTableViewUp(sender: nil)
     }
     
     
@@ -112,8 +112,12 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row <= 1 {
-            return 150.0
+        if indexPath.row == 0 {
+            if controlsCellIsExpanded == true{
+                return 150.0
+            } else {
+                return 75.0
+            }
         } else {
             return 75
         }
@@ -124,21 +128,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: waveformTableViewCellReuseIdentifier) as! WaveformTableViewCell
-            return cell
-        }
-        if indexPath.row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: recordingControlsCellReuseIdentifier) as! RecordingControlsCell
 
-            cell.setupRecordBtn()
-            cell.setupRecordBtnDelegate(delegate: self)
-            return cell
-        }
-        else {
-        let cell = tableView.dequeueReusableCell(withIdentifier: recordingsTableViewCellReuseIdentifier) as! RecordingsTableViewCell
-        cell.recordingNameLabel.text = "recording #\(indexPath.row)"
+         let cell = tableView.dequeueReusableCell(withIdentifier: recordingsTableViewCellReuseIdentifier) as! RecordingsTableViewCell
+        cell.recordingNameLabel.text = "recording #\(indexPath.row-1)"
 
         let duration = getAudioFileDuration(index: indexPath.row)
 
@@ -151,7 +143,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.dateLabel.text = recordingDate
 
         return cell
-        }
     }
     
     
@@ -165,7 +156,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         catch {
             print("error playing file in didSelectRowAt")
         }
-    } 
+    }
+    
+    
+    func expandControlCell(){
+        switch controlsCellIsExpanded {
+        case true:
+            controlsCellIsExpanded = false
+        case false:
+            controlsCellIsExpanded = true
+        }
+        
+    }
 }
 
 
@@ -173,6 +175,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 extension ViewController: RecordButtonDelegate {
     
     func recordButtonDidPress(sender: UIButton){
+        
+        expandControlCell()
+
         
         if audioRecorder == nil {
             numberOfRecords += 1
@@ -198,7 +203,10 @@ extension ViewController: RecordButtonDelegate {
             
             UserDefaults.standard.set(numberOfRecords, forKey: numberKey)
             recordingsTableView.reloadData()
+           
         }
+    
+
     }
     
     func doneButtonDidPress(sender: UIButton) {
@@ -207,18 +215,20 @@ extension ViewController: RecordButtonDelegate {
         alertView.addAction(UIAlertAction.init(title: "Save", style: .default, handler: nil))
         present(alertView, animated: true, completion: nil)
     }
+
     
+
     
-    func moveTableViewUp(sender: UIButton) {
-        UIView.animate(withDuration: 1.0, animations: {
-            self.recordingsTableView.frame.origin.y = self.recordingsTableView.frame.origin.y-300.0
-        })
+    func moveTableViewUp(sender: UIButton?) {
+//        UIView.animate(withDuration: 1.0, animations: {
+//            self.recordingsTableView.frame.origin.y = self.recordingsTableView.frame.origin.y-150.0
+//        })
     }
     
     
-    func moveTableViewDown(sender: UIButton) {
-        UIView.animate(withDuration: 1.0, animations: {
-            self.recordingsTableView.frame.origin.y = self.recordingsTableView.frame.origin.y+300.0
-        })
+    func moveTableViewDown(sender: UIButton?) {
+//        UIView.animate(withDuration: 1.0, animations: {
+//            self.recordingsTableView.frame.origin.y = self.recordingsTableView.frame.origin.y+150.0
+//        })
     }
 }
