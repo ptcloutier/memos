@@ -19,10 +19,15 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
     var audioRecorder: AVAudioRecorder!
     var numberOfRecords: Int = 0
     var audioPlayer: AVAudioPlayer!
+    
     let recordingsTableViewCellReuseIdentifier = "recordingsTableViewCell"
     let recordingControlsCellReuseIdentifier = "recordingControlsCell"
+    let waveformTableViewCellReuseIdentifier = "waveformTableViewCell"
+    
     let recordingsTableViewCellNibName = "RecordingsTableViewCell"
     let recordingControlsCellNibName = "RecordingControlsCell"
+    let waveformTableViewCellNibName = "WaveformTableViewCell"
+    
     var numberKey = "myNumber"
     let sampleRate = 12000
     var isRecording = false
@@ -39,7 +44,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
     
         
         // Register cells
-        
+        recordingsTableView.register(UINib.init(nibName: waveformTableViewCellNibName, bundle: nil), forCellReuseIdentifier: waveformTableViewCellReuseIdentifier)
         recordingsTableView.register(UINib.init(nibName: recordingControlsCellNibName, bundle: nil), forCellReuseIdentifier: recordingControlsCellReuseIdentifier)
         recordingsTableView.register(UINib.init(nibName: recordingsTableViewCellNibName, bundle: nil), forCellReuseIdentifier: recordingsTableViewCellReuseIdentifier)
         
@@ -107,7 +112,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+        if indexPath.row <= 1 {
             return 150.0
         } else {
             return 75
@@ -121,6 +126,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: waveformTableViewCellReuseIdentifier) as! WaveformTableViewCell
+            return cell
+        }
+        if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: recordingControlsCellReuseIdentifier) as! RecordingControlsCell
 
             cell.setupRecordBtn()
@@ -138,7 +147,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.durationLabel.text = ""
         }
-
         let recordingDate = getDate()
         cell.dateLabel.text = recordingDate
 
@@ -157,9 +165,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         catch {
             print("error playing file in didSelectRowAt")
         }
-    }
-    
-    
+    } 
 }
 
 

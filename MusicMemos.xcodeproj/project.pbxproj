@@ -20,6 +20,8 @@
 		A78A722720A1DB9600FF9D0B /* RecordingControlsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A78A722020A1DB9500FF9D0B /* RecordingControlsCell.xib */; };
 		A78A722820A1DB9600FF9D0B /* RecordingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A722120A1DB9600FF9D0B /* RecordingsTableViewCell.swift */; };
 		A78A723020A1DC1A00FF9D0B /* playBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = A78A722F20A1DC1A00FF9D0B /* playBtn.png */; };
+		A7B8E42C20A299F800B11BAA /* WaveformTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8E42A20A299F800B11BAA /* WaveformTableViewCell.swift */; };
+		A7B8E42D20A299F800B11BAA /* WaveformTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B8E42B20A299F800B11BAA /* WaveformTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		A78A722020A1DB9500FF9D0B /* RecordingControlsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordingControlsCell.xib; sourceTree = "<group>"; };
 		A78A722120A1DB9600FF9D0B /* RecordingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingsTableViewCell.swift; sourceTree = "<group>"; };
 		A78A722F20A1DC1A00FF9D0B /* playBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBtn.png; sourceTree = "<group>"; };
+		A7B8E42A20A299F800B11BAA /* WaveformTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformTableViewCell.swift; sourceTree = "<group>"; };
+		A7B8E42B20A299F800B11BAA /* WaveformTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaveformTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 				A78A722020A1DB9500FF9D0B /* RecordingControlsCell.xib */,
 				A78A722120A1DB9600FF9D0B /* RecordingsTableViewCell.swift */,
 				A78A721B20A1DB9500FF9D0B /* RecordingsTableViewCell.xib */,
+				A7B8E42A20A299F800B11BAA /* WaveformTableViewCell.swift */,
+				A7B8E42B20A299F800B11BAA /* WaveformTableViewCell.xib */,
 				A78A721020A1DAF700FF9D0B /* Assets.xcassets */,
 				A78A721220A1DAF700FF9D0B /* LaunchScreen.storyboard */,
 				A78A721520A1DAF700FF9D0B /* Info.plist */,
@@ -158,6 +164,7 @@
 				A78A722420A1DB9600FF9D0B /* fonts in Resources */,
 				A78A721120A1DAF700FF9D0B /* Assets.xcassets in Resources */,
 				A78A720F20A1DAF500FF9D0B /* Main.storyboard in Resources */,
+				A7B8E42D20A299F800B11BAA /* WaveformTableViewCell.xib in Resources */,
 				A78A723020A1DC1A00FF9D0B /* playBtn.png in Resources */,
 				A78A722720A1DB9600FF9D0B /* RecordingControlsCell.xib in Resources */,
 				A78A722220A1DB9600FF9D0B /* RecordingsTableViewCell.xib in Resources */,
@@ -176,6 +183,7 @@
 				A78A722320A1DB9600FF9D0B /* RecordingControlsCell.swift in Sources */,
 				A78A720A20A1DAF500FF9D0B /* AppDelegate.swift in Sources */,
 				A78A722620A1DB9600FF9D0B /* AudioManager.swift in Sources */,
+				A7B8E42C20A299F800B11BAA /* WaveformTableViewCell.swift in Sources */,
 				A78A722520A1DB9600FF9D0B /* RecordButtonDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
