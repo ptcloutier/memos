@@ -8,13 +8,12 @@
 
 import UIKit
 
-class RecordingControlsView: UIView {
+class RecordingControlsCell: UITableViewCell {
     
     var view: UIView!
 
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var recordingTitleLabel: UILabel!
-    
     @IBOutlet weak var blackCircle: UIView!
     @IBOutlet weak var whiteCircle: UIView!
     @IBOutlet weak var dateLabel: UILabel!
@@ -24,15 +23,7 @@ class RecordingControlsView: UIView {
     weak var recordBtnDelegate: RecordButtonDelegate?
     var tableViewMovedDown: Bool = false
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-    }
+   
     
     func setupRecordBtnDelegate(delegate: RecordButtonDelegate){
         recordBtnDelegate = delegate
@@ -46,11 +37,11 @@ class RecordingControlsView: UIView {
         whiteCircle.layer.cornerRadius = whiteCircle.frame.width/2.0
         recordBtn.layer.cornerRadius = recordBtn.frame.width/2.0
         
-        recordBtn.addTarget(self, action: #selector(RecordingControlsView.recordBtnDidPress), for: .touchUpInside)
+        recordBtn.addTarget(self, action: #selector(RecordingControlsCell.recordBtnDidPress), for: .touchUpInside)
         
         doneBtn.isUserInteractionEnabled = false
         doneBtn.titleLabel?.textColor = UIColor.gray
-        doneBtn.addTarget(self, action: #selector(RecordingControlsView.doneBtnDidPress), for: .touchUpInside)
+        doneBtn.addTarget(self, action: #selector(RecordingControlsCell.doneBtnDidPress), for: .touchUpInside)
         
         self.playBtn.isHidden = true
         self.doneBtn.isHidden = true

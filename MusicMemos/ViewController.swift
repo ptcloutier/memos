@@ -20,8 +20,9 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
     var numberOfRecords: Int = 0
     var audioPlayer: AVAudioPlayer!
     let recordingsTableViewCellReuseIdentifier = "recordingsTableViewCell"
+    let recordingControlsCellReuseIdentifier = "recordingControlsCell"
     let recordingsTableViewCellNibName = "RecordingsTableViewCell"
-    let recordingControlsViewNibName = "RecordingControlsView"
+    let recordingControlsCellNibName = "RecordingControlsCell"
     var numberKey = "myNumber"
     let sampleRate = 12000
     var isRecording = false
@@ -35,21 +36,11 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         
+        // Register cells
         
-        // Set up header view
-        
-        
-        guard let header = Bundle.main.loadNibNamed(recordingControlsViewNibName, owner: self, options: nil)![0] as? RecordingControlsView else {
-            print("error loading nib")
-            return
-        }
-        
-        header.setupRecordBtn()
-        header.setupRecordBtnDelegate(delegate: self)
-        recordingsTableView.tableHeaderView = header
-        
-        // Register cell
+        recordingsTableView.register(UINib.init(nibName: recordingControlsCellNibName, bundle: nil), forCellReuseIdentifier: recordingControlsCellReuseIdentifier)
         recordingsTableView.register(UINib.init(nibName: recordingsTableViewCellNibName, bundle: nil), forCellReuseIdentifier: recordingsTableViewCellReuseIdentifier)
         
         recordingsTableView.backgroundColor = UIColor.white
@@ -116,31 +107,43 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        if indexPath.row == 0 {
+            return 150.0
+        } else {
+            return 75
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfRecords
+        return numberOfRecords+1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: recordingControlsCellReuseIdentifier) as! RecordingControlsCell
+
+            cell.setupRecordBtn()
+            cell.setupRecordBtnDelegate(delegate: self)
+            return cell
+        }
+        else {
         let cell = tableView.dequeueReusableCell(withIdentifier: recordingsTableViewCellReuseIdentifier) as! RecordingsTableViewCell
-        cell.recordingNameLabel.text = "recording #\(indexPath.row+1)"
-        
+        cell.recordingNameLabel.text = "recording #\(indexPath.row)"
+
         let duration = getAudioFileDuration(index: indexPath.row)
-        
+
         if duration != "" {
             cell.durationLabel.text = duration
         } else {
             cell.durationLabel.text = ""
         }
-        
+
         let recordingDate = getDate()
         cell.dateLabel.text = recordingDate
-        
-        
+
         return cell
+        }
     }
     
     
