@@ -76,6 +76,24 @@ class ContainerCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDelegate
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if indexPath.row == 0 {
+        }
+        if indexPath.row == 1 {
+            switch secondCellExpanded{
+            case true:
+                print("contract")
+                secondCellExpanded = false
+            case false:
+                print("expand")
+                secondCellExpanded = true
+            }
+        }
+        collectionView.performBatchUpdates({ () -> Void in
+            
+        })
+    }
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
