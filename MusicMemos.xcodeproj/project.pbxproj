@@ -8,50 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		A78A720A20A1DAF500FF9D0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A720920A1DAF500FF9D0B /* AppDelegate.swift */; };
-		A78A720C20A1DAF500FF9D0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A720B20A1DAF500FF9D0B /* ViewController.swift */; };
 		A78A720F20A1DAF500FF9D0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78A720D20A1DAF500FF9D0B /* Main.storyboard */; };
 		A78A721120A1DAF700FF9D0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A78A721020A1DAF700FF9D0B /* Assets.xcassets */; };
 		A78A721420A1DAF700FF9D0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78A721220A1DAF700FF9D0B /* LaunchScreen.storyboard */; };
 		A78A722220A1DB9600FF9D0B /* RecordingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A78A721B20A1DB9500FF9D0B /* RecordingsTableViewCell.xib */; };
-		A78A722320A1DB9600FF9D0B /* RecordingControlsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A721C20A1DB9500FF9D0B /* RecordingControlsCell.swift */; };
 		A78A722420A1DB9600FF9D0B /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = A78A721D20A1DB9500FF9D0B /* fonts */; };
 		A78A722520A1DB9600FF9D0B /* RecordButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A721E20A1DB9500FF9D0B /* RecordButtonDelegate.swift */; };
 		A78A722620A1DB9600FF9D0B /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A721F20A1DB9500FF9D0B /* AudioManager.swift */; };
-		A78A722720A1DB9600FF9D0B /* RecordingControlsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A78A722020A1DB9500FF9D0B /* RecordingControlsCell.xib */; };
 		A78A722820A1DB9600FF9D0B /* RecordingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A722120A1DB9600FF9D0B /* RecordingsTableViewCell.swift */; };
 		A78A723020A1DC1A00FF9D0B /* playBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = A78A722F20A1DC1A00FF9D0B /* playBtn.png */; };
-		A7B8E42C20A299F800B11BAA /* WaveformTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8E42A20A299F800B11BAA /* WaveformTableViewCell.swift */; };
-		A7B8E42D20A299F800B11BAA /* WaveformTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B8E42B20A299F800B11BAA /* WaveformTableViewCell.xib */; };
 		A7B8E42F20A2B7F200B11BAA /* ContainerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8E42E20A2B7F200B11BAA /* ContainerCollectionViewController.swift */; };
 		A7B8E43120A2B93D00B11BAA /* FirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8E43020A2B93D00B11BAA /* FirstCollectionViewCell.swift */; };
 		A7B8E43320A2B94900B11BAA /* SecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8E43220A2B94900B11BAA /* SecondCollectionViewCell.swift */; };
 		A7B8E43520A2B95300B11BAA /* ThirdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8E43420A2B95300B11BAA /* ThirdCollectionViewCell.swift */; };
 		A7B8E43720A2BE1B00B11BAA /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8E43620A2BE1B00B11BAA /* FlowLayout.swift */; };
+		A7D2751020A3F7030071F5DF /* SecondCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7D2750F20A3F7030071F5DF /* SecondCollectionViewCell.xib */; };
+		A7D2751220A3FFAA0071F5DF /* MMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2751120A3FFAA0071F5DF /* MMConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A78A720620A1DAF500FF9D0B /* MusicMemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicMemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78A720920A1DAF500FF9D0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A78A720B20A1DAF500FF9D0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A78A720E20A1DAF500FF9D0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A78A721020A1DAF700FF9D0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A78A721320A1DAF700FF9D0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A78A721520A1DAF700FF9D0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A78A721B20A1DB9500FF9D0B /* RecordingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordingsTableViewCell.xib; sourceTree = "<group>"; };
-		A78A721C20A1DB9500FF9D0B /* RecordingControlsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingControlsCell.swift; sourceTree = "<group>"; };
 		A78A721D20A1DB9500FF9D0B /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		A78A721E20A1DB9500FF9D0B /* RecordButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButtonDelegate.swift; sourceTree = "<group>"; };
 		A78A721F20A1DB9500FF9D0B /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
-		A78A722020A1DB9500FF9D0B /* RecordingControlsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordingControlsCell.xib; sourceTree = "<group>"; };
 		A78A722120A1DB9600FF9D0B /* RecordingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingsTableViewCell.swift; sourceTree = "<group>"; };
 		A78A722F20A1DC1A00FF9D0B /* playBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBtn.png; sourceTree = "<group>"; };
-		A7B8E42A20A299F800B11BAA /* WaveformTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformTableViewCell.swift; sourceTree = "<group>"; };
-		A7B8E42B20A299F800B11BAA /* WaveformTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaveformTableViewCell.xib; sourceTree = "<group>"; };
 		A7B8E42E20A2B7F200B11BAA /* ContainerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCollectionViewController.swift; sourceTree = "<group>"; };
 		A7B8E43020A2B93D00B11BAA /* FirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7B8E43220A2B94900B11BAA /* SecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7B8E43420A2B95300B11BAA /* ThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7B8E43620A2BE1B00B11BAA /* FlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
+		A7D2750F20A3F7030071F5DF /* SecondCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondCollectionViewCell.xib; sourceTree = "<group>"; };
+		A7D2751120A3FFAA0071F5DF /* MMConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,21 +79,18 @@
 			isa = PBXGroup;
 			children = (
 				A78A720D20A1DAF500FF9D0B /* Main.storyboard */,
+				A7D2751120A3FFAA0071F5DF /* MMConstants.swift */,
 				A78A720920A1DAF500FF9D0B /* AppDelegate.swift */,
-				A78A720B20A1DAF500FF9D0B /* ViewController.swift */,
 				A7B8E43620A2BE1B00B11BAA /* FlowLayout.swift */,
 				A7B8E42E20A2B7F200B11BAA /* ContainerCollectionViewController.swift */,
 				A7B8E43020A2B93D00B11BAA /* FirstCollectionViewCell.swift */,
 				A7B8E43220A2B94900B11BAA /* SecondCollectionViewCell.swift */,
+				A7D2750F20A3F7030071F5DF /* SecondCollectionViewCell.xib */,
 				A7B8E43420A2B95300B11BAA /* ThirdCollectionViewCell.swift */,
 				A78A721F20A1DB9500FF9D0B /* AudioManager.swift */,
 				A78A721E20A1DB9500FF9D0B /* RecordButtonDelegate.swift */,
-				A78A721C20A1DB9500FF9D0B /* RecordingControlsCell.swift */,
-				A78A722020A1DB9500FF9D0B /* RecordingControlsCell.xib */,
 				A78A722120A1DB9600FF9D0B /* RecordingsTableViewCell.swift */,
 				A78A721B20A1DB9500FF9D0B /* RecordingsTableViewCell.xib */,
-				A7B8E42A20A299F800B11BAA /* WaveformTableViewCell.swift */,
-				A7B8E42B20A299F800B11BAA /* WaveformTableViewCell.xib */,
 				A78A723120A1DC3000FF9D0B /* icons */,
 				A78A721D20A1DB9500FF9D0B /* fonts */,
 				A78A721020A1DAF700FF9D0B /* Assets.xcassets */,
@@ -176,12 +167,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A78A721420A1DAF700FF9D0B /* LaunchScreen.storyboard in Resources */,
+				A7D2751020A3F7030071F5DF /* SecondCollectionViewCell.xib in Resources */,
 				A78A722420A1DB9600FF9D0B /* fonts in Resources */,
 				A78A721120A1DAF700FF9D0B /* Assets.xcassets in Resources */,
 				A78A720F20A1DAF500FF9D0B /* Main.storyboard in Resources */,
-				A7B8E42D20A299F800B11BAA /* WaveformTableViewCell.xib in Resources */,
 				A78A723020A1DC1A00FF9D0B /* playBtn.png in Resources */,
-				A78A722720A1DB9600FF9D0B /* RecordingControlsCell.xib in Resources */,
 				A78A722220A1DB9600FF9D0B /* RecordingsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,14 +186,12 @@
 				A7B8E43720A2BE1B00B11BAA /* FlowLayout.swift in Sources */,
 				A7B8E42F20A2B7F200B11BAA /* ContainerCollectionViewController.swift in Sources */,
 				A7B8E43520A2B95300B11BAA /* ThirdCollectionViewCell.swift in Sources */,
-				A78A720C20A1DAF500FF9D0B /* ViewController.swift in Sources */,
 				A7B8E43320A2B94900B11BAA /* SecondCollectionViewCell.swift in Sources */,
 				A78A722820A1DB9600FF9D0B /* RecordingsTableViewCell.swift in Sources */,
-				A78A722320A1DB9600FF9D0B /* RecordingControlsCell.swift in Sources */,
 				A78A720A20A1DAF500FF9D0B /* AppDelegate.swift in Sources */,
 				A78A722620A1DB9600FF9D0B /* AudioManager.swift in Sources */,
 				A7B8E43120A2B93D00B11BAA /* FirstCollectionViewCell.swift in Sources */,
-				A7B8E42C20A299F800B11BAA /* WaveformTableViewCell.swift in Sources */,
+				A7D2751220A3FFAA0071F5DF /* MMConstants.swift in Sources */,
 				A78A722520A1DB9600FF9D0B /* RecordButtonDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

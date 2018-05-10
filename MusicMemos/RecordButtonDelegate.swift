@@ -10,11 +10,10 @@ import Foundation
 import UIKit
 
 protocol RecordButtonDelegate: class {
-    func recordButtonDidPress(sender: UIButton)
     
-    func doneButtonDidPress(sender: UIButton)
+    func displayAlert(title: String, message: String)
     
-    func moveTableViewDown(sender: UIButton?)
+    func recordButtonDidPress()
     
-    func moveTableViewUp(sender: UIButton?)
+    func doneButtonDidPress()
 }

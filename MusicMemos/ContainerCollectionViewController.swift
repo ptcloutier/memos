@@ -12,23 +12,33 @@ private let firstCellID = "FirstCell"
 private let secondCellID = "SecondCell"
 private let thirdCellID = "ThirdCell"
 
+private let secondNib = "SecondCollectionViewCell"
+
+
 class ContainerCollectionViewController: UICollectionViewController {
     
     @IBOutlet var cv: UICollectionView!
     var secondCellExpanded: Bool = true
 
+    
+    
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
         cv.register(FirstCollectionViewCell.self, forCellWithReuseIdentifier: firstCellID)
-        cv.register(SecondCollectionViewCell.self, forCellWithReuseIdentifier: secondCellID)
+        cv.register(UINib(nibName: secondNib, bundle: nil), forCellWithReuseIdentifier: secondCellID)
         cv.register(ThirdCollectionViewCell.self, forCellWithReuseIdentifier: thirdCellID)
         let layout = FlowLayout.init(direction: .vertical, numberOfColumns: 1)
         cv.collectionViewLayout = layout
+
      }
 
     
@@ -64,12 +74,13 @@ class ContainerCollectionViewController: UICollectionViewController {
         }
         if indexPath.row == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: secondCellID, for: indexPath) as! SecondCollectionViewCell
-            cell.backgroundColor = UIColor.orange
+            cell.setupRecordBtn()
+            cell.setupRecordBtnDelegate(delegate: self)
             return cell
         }
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: thirdCellID, for: indexPath) as! ThirdCollectionViewCell
-            cell.backgroundColor = UIColor.purple
+            cell.setupTableView()
             return cell
         }
     }
@@ -77,7 +88,7 @@ class ContainerCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+
         if indexPath.row == 0 {
         }
         if indexPath.row == 1 {
@@ -90,9 +101,10 @@ class ContainerCollectionViewController: UICollectionViewController {
                 secondCellExpanded = true
             }
         }
+        UIView.animate(withDuration: 1.0, animations: {
         collectionView.performBatchUpdates({ () -> Void in
-            
-        })
+
+        })})
     }
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
@@ -170,3 +182,42 @@ extension ContainerCollectionViewController:  UICollectionViewDelegateFlowLayout
         return UIEdgeInsetsMake(0, 0, 0, 0)
     }
 }
+
+
+
+extension ContainerCollectionViewController: RecordButtonDelegate {
+    
+   
+    
+    func recordButtonDidPress(){
+//        switch secondCellExpanded{
+//        case true:
+//            print("contract")
+//            secondCellExpanded = false
+//        case false:
+//            print("expand")
+//            secondCellExpanded = true
+//        }
+//        self.cv.performBatchUpdates({ () -> Void in
+//
+//        })
+    }
+
+    
+    func doneButtonDidPress() {
+        let alertView = UIAlertController.init(title: "Save Voice Memo", message: "", preferredStyle: .actionSheet)
+        alertView.addAction(UIAlertAction.init(title: "Delete", style: .destructive, handler: nil))
+        alertView.addAction(UIAlertAction.init(title: "Save", style: .default, handler: nil))
+        present(alertView, animated: true, completion: nil)
+    }
+    
+    
+    
+    func displayAlert(title: String, message: String){
+        let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: "done", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+}
+
+
