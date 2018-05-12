@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
-let recordingsTableViewCellReuseIdentifier = "recordingsTableViewCell"
-let recordingsTableViewCellNibName = "RecordingsTableViewCell"
-let reloadDataNotification = "ReloadDataNotification"
+//
+//let recordingsTableViewCellReuseIdentifier = "recordingsTableViewCell"
+//let recordingsTableViewCellNibName = "RecordingsTableViewCell"
+//let reloadDataNotification = "ReloadDataNotification"

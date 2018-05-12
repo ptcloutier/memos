@@ -10,6 +10,10 @@ import UIKit
 import AVFoundation
 
 
+let recordingsTableViewCellReuseIdentifier = "recordingsTableViewCell"
+let recordingsTableViewCellNibName = "RecordingsTableViewCell"
+let reloadDataNotification = "ReloadDataNotification"
+
 
 
 class ThirdCollectionViewCell: UICollectionViewCell, AVAudioRecorderDelegate {
@@ -33,11 +37,13 @@ class ThirdCollectionViewCell: UICollectionViewCell, AVAudioRecorderDelegate {
     }
     
     func setupTableView(){
-        
-        recordingsTableView = UITableView.init(frame: self.frame)
+        let size = CGSize(width: self.frame.width, height: self.frame.height)
+        let point = CGPoint(x: self.frame.origin.x, y: self.frame.origin.y)
+        recordingsTableView = UITableView.init(frame: CGRect(origin: point, size: size))
         recordingsTableView.delegate = self
         recordingsTableView.dataSource = self
-        contentView.addSubview(recordingsTableView)
+        self.addSubview(recordingsTableView)
+        self.bringSubview(toFront: recordingsTableView)
         
         NotificationCenter.default.addObserver(self, selector: #selector(ThirdCollectionViewCell.reload), name: Notification.Name.init(reloadDataNotification), object: nil)
         
@@ -65,6 +71,7 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("\(AudioManager.shared.numberOfRecords)")
         return AudioManager.shared.numberOfRecords+1
     }
     

@@ -46,7 +46,7 @@ class SecondCollectionViewCell: UICollectionViewCell {
         whiteCircle.layer.cornerRadius = whiteCircle.frame.width/2.0
         recordBtn.layer.cornerRadius = recordBtn.frame.width/2.0
         
-        recordBtn.addTarget(self, action: #selector(SecondCollectionViewCell.recordBtnDidPress), for: .touchUpInside)
+//        recordBtn.addTarget(self, action: #selector(SecondCollectionViewCell.recordBtnDidPress), for: .touchUpInside)
         
         doneBtn.isUserInteractionEnabled = false
         doneBtn.titleLabel?.textColor = UIColor.gray
@@ -97,26 +97,58 @@ class SecondCollectionViewCell: UICollectionViewCell {
     }
     
     
-    
-    @objc func recordBtnDidPress() {
-        print("why god")
-//        switch AudioManager.shared.isRecording {
-//        case true:
-//            let flag = AudioManager.shared.recordFile()
-//            if flag == 0 {
-//                recordBtnDelegate?.displayAlert(title:  "Oops!", message: "Recording failed")
+    @IBAction func recordBtnDidPress(_ sender: Any) {
+        switch AudioManager.shared.isRecording {
+        case true:
+            AudioManager.shared.stopRecording()
+            NotificationCenter.default.post(name: Notification.Name.init(reloadDataNotification), object: nil)
+            recordBtnDelegate?.recordButtonDidPress()
+            recordBtnAnimation()
+        case false:
+            
+            let flag = AudioManager.shared.recordFile()
+            if flag == 0 {
+                recordBtnDelegate?.displayAlert(title:  "Oops!", message: "Recording failed")
+            }
+        }
+    }
+//    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+//
+//        //From higher z- order to lower except base view;
+//        let i = subviews.count-2
+//        while i >= 0 {
+//            let newPoint = subviews[i].convert(point, from: self)
+//            let view = subviews[i].hitTest(newPoint, with: event)
+//            if view != nil{
+//                return view
 //            }
-//        case false:
-//            AudioManager.shared.stopRecording()
-//            NotificationCenter.default.post(name: Notification.Name.init(reloadDataNotification), object: nil)
 //        }
-//        
-//        recordBtnDelegate?.recordButtonDidPress()
-//        recordBtnAnimation()
-    }
+//
+//
+//        return super.hitTest(point, with: event)
+//    }
     
     
-    @objc func doneBtnDidPress(){
-        recordBtnDelegate?.doneButtonDidPress()
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        var view = self.recordBtn.hitTest(self.recordBtn.convert(point, from: self), with: event)
+        if view == nil {
+            view = super.hitTest(point, with: event)
+        }
+        return view
     }
+    
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        if super.point(inside: point, with: event) {
+            return true
+        }
+        return !self.recordBtn.isHidden && self.recordBtn.point(inside: self.recordBtn.convert(point, from: self), with: event)
+    }
+    
+        
+        
+        
+        
+        @objc func doneBtnDidPress(){
+            recordBtnDelegate?.doneButtonDidPress()
+        }
 }

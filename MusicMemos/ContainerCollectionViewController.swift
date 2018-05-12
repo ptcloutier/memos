@@ -38,7 +38,7 @@ class ContainerCollectionViewController: UICollectionViewController {
         cv.register(ThirdCollectionViewCell.self, forCellWithReuseIdentifier: thirdCellID)
         let layout = FlowLayout.init(direction: .vertical, numberOfColumns: 1)
         cv.collectionViewLayout = layout
-
+        cv.isScrollEnabled = false 
      }
 
     
@@ -87,25 +87,9 @@ class ContainerCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDelegate
 
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
 
-        if indexPath.row == 0 {
-        }
-        if indexPath.row == 1 {
-            switch secondCellExpanded{
-            case true:
-                print("contract")
-                secondCellExpanded = false
-            case false:
-                print("expand")
-                secondCellExpanded = true
-            }
-        }
-        UIView.animate(withDuration: 1.0, animations: {
-        collectionView.performBatchUpdates({ () -> Void in
 
-        })})
-    }
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
@@ -190,17 +174,17 @@ extension ContainerCollectionViewController: RecordButtonDelegate {
    
     
     func recordButtonDidPress(){
-//        switch secondCellExpanded{
-//        case true:
-//            print("contract")
-//            secondCellExpanded = false
-//        case false:
-//            print("expand")
-//            secondCellExpanded = true
-//        }
-//        self.cv.performBatchUpdates({ () -> Void in
-//
-//        })
+        switch secondCellExpanded{
+        case true:
+            print("contract")
+            secondCellExpanded = false
+        case false:
+            print("expand")
+            secondCellExpanded = true
+        }
+        self.cv.performBatchUpdates({ () -> Void in
+
+        })
     }
 
     

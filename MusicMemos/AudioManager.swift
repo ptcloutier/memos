@@ -107,6 +107,7 @@ class AudioManager: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
                 audioRecorder.record()
                 isRecording = true
                 AudioManager.shared.isRecording = true
+                print("Recording started")
                 return 1 // success
             } catch {
                 return 0 // display alert
@@ -121,7 +122,7 @@ class AudioManager: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
         audioRecorder = nil
         isRecording = false
         AudioManager.shared.isRecording = false
-        
+        print("Recording stopped")
         UserDefaults.standard.set(numberOfRecords, forKey: numberKey)
     }
 }
