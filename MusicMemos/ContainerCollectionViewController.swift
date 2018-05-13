@@ -18,11 +18,7 @@ private let secondNib = "SecondCollectionViewCell"
 class ContainerCollectionViewController: UICollectionViewController {
     
     @IBOutlet var cv: UICollectionView!
-    var secondCellExpanded: Bool = true
-
-    
-    
-    
+    var secondCellExpanded: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -143,11 +139,8 @@ extension ContainerCollectionViewController:  UICollectionViewDelegateFlowLayout
                 size = CGSize.init(width: w, height: (h/3.0)/2.0)
             }
         case 2:
-            if secondCellExpanded == true {
-                size = CGSize.init(width: w, height: h - ((h/3.0)*2.0))
-            } else {
-                size = CGSize.init(width: w, height: (h - (h/3.0))-(h/3.0)/2.0)
-            }
+            size = CGSize.init(width: w, height: h - ((h/2)))
+
         default:
             size = CGSize.init(width: w, height: h/3.0)
         }

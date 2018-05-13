@@ -16,4 +16,5 @@ protocol RecordButtonDelegate: class {
     func recordButtonDidPress()
     
     func doneButtonDidPress()
+    
 }

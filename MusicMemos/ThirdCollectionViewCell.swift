@@ -24,7 +24,7 @@ class ThirdCollectionViewCell: UICollectionViewCell, AVAudioRecorderDelegate {
     
     var recordBtn: UIButton!
     
-    var recordingsTableView = UITableView()
+    var tableView = UITableView()
     
     
     
@@ -37,22 +37,32 @@ class ThirdCollectionViewCell: UICollectionViewCell, AVAudioRecorderDelegate {
     }
     
     func setupTableView(){
-        let size = CGSize(width: self.frame.width, height: self.frame.height)
-        let point = CGPoint(x: self.frame.origin.x, y: self.frame.origin.y)
-        recordingsTableView = UITableView.init(frame: CGRect(origin: point, size: size))
-        recordingsTableView.delegate = self
-        recordingsTableView.dataSource = self
-        self.addSubview(recordingsTableView)
-        self.bringSubview(toFront: recordingsTableView)
         
+//        let size = CGSize(width: self.frame.width, height: self.frame.height)
+//        let point = CGPoint(x: self.frame.origin.x, y: self.frame.origin.y)
+//
+//        recordingsTableView = UITableView.init(frame: CGRect(origin: point, size: size))
+//        guard let recordingsTableView = self.recordingsTableView else { return }
+       
+//        recordingsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+//        recordingsTableView.delegate = self
+//        recordingsTableView.dataSource = self
+//        self.addSubview(recordingsTableView)
+        tableView = UITableView(frame: self.contentView.bounds, style: UITableViewStyle.plain)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib.init(nibName: recordingsTableViewCellNibName, bundle: nil), forCellReuseIdentifier: recordingsTableViewCellReuseIdentifier)
+//        tableView.backgroundColor = UIColor.white
+        
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "my")
+        contentView.addSubview(tableView)
+ 
         NotificationCenter.default.addObserver(self, selector: #selector(ThirdCollectionViewCell.reload), name: Notification.Name.init(reloadDataNotification), object: nil)
-        
-        recordingsTableView.register(UINib.init(nibName: recordingsTableViewCellNibName, bundle: nil), forCellReuseIdentifier: recordingsTableViewCellReuseIdentifier)
      }
     
     
-    @objc func reload(){
-        recordingsTableView.reloadData()
+    @objc func reload(){ 
+        self.tableView.reloadData()
     }
 }
 
@@ -80,10 +90,11 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: recordingsTableViewCellReuseIdentifier) as! RecordingsTableViewCell
-        cell.recordingNameLabel.text = "recording #\(indexPath.row-1)"
         
+         cell.recordingNameLabel.text = "recording #\(indexPath.row-1)"
+
         let duration = AudioManager.shared.getAudioFileDuration(index: indexPath.row)
-        
+
         if duration != "" {
             cell.durationLabel.text = duration
         } else {
@@ -91,7 +102,8 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
         }
         let recordingDate = AudioManager.shared.getDate()
         cell.dateLabel.text = recordingDate
-        
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "my", for: indexPath)
+//        cell.textLabel?.text = "This is row \(indexPath.row)"
         return cell
     }
     

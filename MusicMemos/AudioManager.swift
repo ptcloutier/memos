@@ -105,8 +105,6 @@ class AudioManager: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
                 audioRecorder = try AVAudioRecorder(url: filename, settings: settings)
                 audioRecorder.delegate = self
                 audioRecorder.record()
-                isRecording = true
-                AudioManager.shared.isRecording = true
                 print("Recording started")
                 return 1 // success
             } catch {
@@ -120,8 +118,6 @@ class AudioManager: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     func stopRecording(){
         audioRecorder.stop()
         audioRecorder = nil
-        isRecording = false
-        AudioManager.shared.isRecording = false
         print("Recording stopped")
         UserDefaults.standard.set(numberOfRecords, forKey: numberKey)
     }

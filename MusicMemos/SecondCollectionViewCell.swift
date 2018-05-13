@@ -46,11 +46,8 @@ class SecondCollectionViewCell: UICollectionViewCell {
         whiteCircle.layer.cornerRadius = whiteCircle.frame.width/2.0
         recordBtn.layer.cornerRadius = recordBtn.frame.width/2.0
         
-//        recordBtn.addTarget(self, action: #selector(SecondCollectionViewCell.recordBtnDidPress), for: .touchUpInside)
-        
         doneBtn.isUserInteractionEnabled = false
         doneBtn.titleLabel?.textColor = UIColor.gray
-        doneBtn.addTarget(self, action: #selector(SecondCollectionViewCell.doneBtnDidPress), for: .touchUpInside)
         
         self.playBtn.isHidden = true
         self.doneBtn.isHidden = true
@@ -98,35 +95,25 @@ class SecondCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func recordBtnDidPress(_ sender: Any) {
+        
         switch AudioManager.shared.isRecording {
         case true:
+            AudioManager.shared.isRecording = false
             AudioManager.shared.stopRecording()
             NotificationCenter.default.post(name: Notification.Name.init(reloadDataNotification), object: nil)
             recordBtnDelegate?.recordButtonDidPress()
             recordBtnAnimation()
         case false:
-            
+            AudioManager.shared.isRecording = true
+
             let flag = AudioManager.shared.recordFile()
             if flag == 0 {
                 recordBtnDelegate?.displayAlert(title:  "Oops!", message: "Recording failed")
             }
+            recordBtnDelegate?.recordButtonDidPress()
+
         }
     }
-//    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-//
-//        //From higher z- order to lower except base view;
-//        let i = subviews.count-2
-//        while i >= 0 {
-//            let newPoint = subviews[i].convert(point, from: self)
-//            let view = subviews[i].hitTest(newPoint, with: event)
-//            if view != nil{
-//                return view
-//            }
-//        }
-//
-//
-//        return super.hitTest(point, with: event)
-//    }
     
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
