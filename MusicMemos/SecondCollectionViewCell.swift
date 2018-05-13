@@ -49,69 +49,80 @@ class SecondCollectionViewCell: UICollectionViewCell {
         doneBtn.isUserInteractionEnabled = false
         doneBtn.titleLabel?.textColor = UIColor.gray
         
-        self.playBtn.isHidden = true
-        self.doneBtn.isHidden = true
+        playBtn.isHidden = true
+        doneBtn.isHidden = true
+        recordingTitleLabel.isHidden = true
+        dateLabel.isHidden = true
+        timeLabel.isHidden = true
         
     }
     
     
-    func recordBtnAnimation(){
-        switch AudioManager.shared.isRecording {
-        case true:
-            UIView.animate(withDuration: 0.3, animations: {
-                self.recordBtn.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-                self.recordBtn.layer.cornerRadius = self.recordBtn.frame.width*0.25
-            })
-            disablePlayDoneBtn()
-        case false:
-            UIView.animate(withDuration: 0.5, animations: {
-                self.recordBtn.transform = CGAffineTransform.identity
-                self.recordBtn.layer.cornerRadius = self.recordBtn.frame.width*0.5
-            })
-            enablePlayDoneBtn()
-        }
-    }
     
     
     
-    
-    func disablePlayDoneBtn() {
-        doneBtn.isHidden = false
-        doneBtn.titleLabel?.textColor = UIColor.gray
-        doneBtn.isUserInteractionEnabled = false
-        
-        self.playBtn.isHidden = false
-        self.playBtn.alpha = 0.5
-        self.playBtn.isUserInteractionEnabled = false
-    }
-    
-    
-    func enablePlayDoneBtn() {
-        doneBtn.titleLabel?.textColor = UIColor.white
-        doneBtn.isUserInteractionEnabled = true
-        self.playBtn.alpha = 1.0
-        self.playBtn.isUserInteractionEnabled = true
-    }
+
     
     
     @IBAction func recordBtnDidPress(_ sender: Any) {
         
         switch AudioManager.shared.isRecording {
+        
         case true:
+            
+            playBtn.isHidden = true
+            doneBtn.isHidden = true
+            recordingTitleLabel.isHidden = true
+            dateLabel.isHidden = true
+            timeLabel.isHidden = true
+            
+            
             AudioManager.shared.isRecording = false
             AudioManager.shared.stopRecording()
+           
+            UIView.animate(withDuration: 0.5, animations: {
+                self.recordBtn.transform = CGAffineTransform.identity
+                self.recordBtn.layer.cornerRadius = self.recordBtn.frame.width*0.5
+            })
+            
+            doneBtn.titleLabel?.textColor = UIColor.white
+            doneBtn.isUserInteractionEnabled = true
+            
+            self.playBtn.alpha = 1.0
+            self.playBtn.isUserInteractionEnabled = true
+            
             NotificationCenter.default.post(name: Notification.Name.init(reloadDataNotification), object: nil)
             recordBtnDelegate?.recordButtonDidPress()
-            recordBtnAnimation()
+       
         case false:
+            
+            playBtn.isHidden = false
+            doneBtn.isHidden = false
+            recordingTitleLabel.isHidden = false
+            dateLabel.isHidden = false
+            timeLabel.isHidden = false 
+            
+            
             AudioManager.shared.isRecording = true
 
             let flag = AudioManager.shared.recordFile()
             if flag == 0 {
                 recordBtnDelegate?.displayAlert(title:  "Oops!", message: "Recording failed")
             }
+            UIView.animate(withDuration: 0.3, animations: {
+                self.recordBtn.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                self.recordBtn.layer.cornerRadius = self.recordBtn.frame.width*0.25
+            })
+            
+            doneBtn.isHidden = false
+            doneBtn.titleLabel?.textColor = UIColor.gray
+            doneBtn.isUserInteractionEnabled = false
+            
+            self.playBtn.isHidden = false
+            self.playBtn.alpha = 0.5
+            self.playBtn.isUserInteractionEnabled = false
+            
             recordBtnDelegate?.recordButtonDidPress()
-
         }
     }
     
