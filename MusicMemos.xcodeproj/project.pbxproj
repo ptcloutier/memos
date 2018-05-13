@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7058CC820A7F7380060B654 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7058CC720A7F7380060B654 /* DataManager.swift */; };
+		A7058CCA20A7F8AA0060B654 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7058CC920A7F8AA0060B654 /* Recording.swift */; };
 		A78A720A20A1DAF500FF9D0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A720920A1DAF500FF9D0B /* AppDelegate.swift */; };
 		A78A720F20A1DAF500FF9D0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78A720D20A1DAF500FF9D0B /* Main.storyboard */; };
 		A78A721120A1DAF700FF9D0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A78A721020A1DAF700FF9D0B /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A7058CC720A7F7380060B654 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A7058CC920A7F8AA0060B654 /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		A78A720620A1DAF500FF9D0B /* MusicMemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicMemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78A720920A1DAF500FF9D0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A78A720E20A1DAF500FF9D0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,10 +91,12 @@
 				A7B8E43220A2B94900B11BAA /* SecondCollectionViewCell.swift */,
 				A7D2750F20A3F7030071F5DF /* SecondCollectionViewCell.xib */,
 				A7B8E43420A2B95300B11BAA /* ThirdCollectionViewCell.swift */,
-				A78A721F20A1DB9500FF9D0B /* AudioManager.swift */,
 				A78A721E20A1DB9500FF9D0B /* RecordButtonDelegate.swift */,
 				A78A722120A1DB9600FF9D0B /* RecordingsTableViewCell.swift */,
 				A78A721B20A1DB9500FF9D0B /* RecordingsTableViewCell.xib */,
+				A78A721F20A1DB9500FF9D0B /* AudioManager.swift */,
+				A7058CC720A7F7380060B654 /* DataManager.swift */,
+				A7058CC920A7F8AA0060B654 /* Recording.swift */,
 				A78A723120A1DC3000FF9D0B /* icons */,
 				A78A721D20A1DB9500FF9D0B /* fonts */,
 				A78A721020A1DAF700FF9D0B /* Assets.xcassets */,
@@ -190,7 +196,9 @@
 				A78A722820A1DB9600FF9D0B /* RecordingsTableViewCell.swift in Sources */,
 				A78A720A20A1DAF500FF9D0B /* AppDelegate.swift in Sources */,
 				A78A722620A1DB9600FF9D0B /* AudioManager.swift in Sources */,
+				A7058CCA20A7F8AA0060B654 /* Recording.swift in Sources */,
 				A7B8E43120A2B93D00B11BAA /* FirstCollectionViewCell.swift in Sources */,
+				A7058CC820A7F7380060B654 /* DataManager.swift in Sources */,
 				A7D2751220A3FFAA0071F5DF /* MMConstants.swift in Sources */,
 				A78A722520A1DB9600FF9D0B /* RecordButtonDelegate.swift in Sources */,
 			);

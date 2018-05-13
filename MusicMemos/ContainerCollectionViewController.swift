@@ -72,6 +72,7 @@ class ContainerCollectionViewController: UICollectionViewController {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: secondCellID, for: indexPath) as! SecondCollectionViewCell
             cell.setupRecordBtn()
             cell.setupRecordBtnDelegate(delegate: self)
+            cell.dateLabel.text = AudioManager.shared.getDate()
             return cell
         }
         else {
