@@ -13,7 +13,7 @@ class RecordingsTableViewCell: UITableViewCell {
     @IBOutlet weak var recordingNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
-
+ 
     
     override func awakeFromNib() {
         super.awakeFromNib()

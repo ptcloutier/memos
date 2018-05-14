@@ -19,8 +19,6 @@ let reloadDataNotification = "ReloadDataNotification"
 class ThirdCollectionViewCell: UICollectionViewCell, AVAudioRecorderDelegate {
     
     weak var recordBtnDelegate: RecordButtonDelegate?
-
-    var expandCell: Bool = false
     
     var recordBtn: UIButton!
     
@@ -38,23 +36,12 @@ class ThirdCollectionViewCell: UICollectionViewCell, AVAudioRecorderDelegate {
     
     func setupTableView(){
         
-//        let size = CGSize(width: self.frame.width, height: self.frame.height)
-//        let point = CGPoint(x: self.frame.origin.x, y: self.frame.origin.y)
-//
-//        recordingsTableView = UITableView.init(frame: CGRect(origin: point, size: size))
-//        guard let recordingsTableView = self.recordingsTableView else { return }
-       
-//        recordingsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-//        recordingsTableView.delegate = self
-//        recordingsTableView.dataSource = self
-//        self.addSubview(recordingsTableView)
+
         tableView = UITableView(frame: self.contentView.bounds, style: UITableViewStyle.plain)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib.init(nibName: recordingsTableViewCellNibName, bundle: nil), forCellReuseIdentifier: recordingsTableViewCellReuseIdentifier)
-//        tableView.backgroundColor = UIColor.white
-        
-//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "my")
+
         contentView.addSubview(tableView)
  
         NotificationCenter.default.addObserver(self, selector: #selector(ThirdCollectionViewCell.reload), name: Notification.Name.init(reloadDataNotification), object: nil)
@@ -71,11 +58,7 @@ class ThirdCollectionViewCell: UICollectionViewCell, AVAudioRecorderDelegate {
 extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if expandCell == true{
-            return 150.0
-        } else {
             return 75.0
-        }
     }
     
     
@@ -91,7 +74,7 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: recordingsTableViewCellReuseIdentifier) as! RecordingsTableViewCell
         
-         cell.recordingNameLabel.text = "recording #\(indexPath.row-1)"
+         cell.recordingNameLabel.text = "recording #\(indexPath.row+1)"
 
         let duration = AudioManager.shared.getAudioFileDuration(index: indexPath.row)
 
@@ -102,8 +85,6 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
         }
         let recordingDate = AudioManager.shared.getDate()
         cell.dateLabel.text = recordingDate
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "my", for: indexPath)
-//        cell.textLabel?.text = "This is row \(indexPath.row)"
         return cell
     }
     
@@ -111,6 +92,7 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         AudioManager.shared.playFile(index: indexPath.row)
+        // TODO: - Expand cells upon selection 
         tableView.beginUpdates()
         tableView.endUpdates()
     }
