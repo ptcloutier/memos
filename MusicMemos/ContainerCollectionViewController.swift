@@ -135,12 +135,12 @@ extension ContainerCollectionViewController:  UICollectionViewDelegateFlowLayout
 
         case 1:
             if secondCellExpanded == true {
-                size = CGSize.init(width: w, height: h/3.0)
+                size = CGSize.init(width: w, height: (h/3.0)*0.8)
             } else {
                 size = CGSize.init(width: w, height: (h/3.0)*0.4)
             }
         case 2:
-            size = CGSize.init(width: w, height: h - ((h/2)))
+            size = CGSize.init(width: w, height: h )
 
         default:
             size = CGSize.init(width: w, height: h/3.0)
