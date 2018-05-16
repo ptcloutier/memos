@@ -18,11 +18,9 @@ private let secondNib = "SecondCollectionViewCell"
 class ContainerCollectionViewController: UICollectionViewController {
     
     @IBOutlet var cv: UICollectionView!
-    var secondCellExpanded: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -37,20 +35,9 @@ class ContainerCollectionViewController: UICollectionViewController {
         cv.isScrollEnabled = false 
      }
 
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    
 
-    // MARK: UICollectionViewDataSource
+    // MARK: Collectionview data source
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -85,37 +72,6 @@ class ContainerCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
-
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }
 
 
@@ -134,11 +90,7 @@ extension ContainerCollectionViewController:  UICollectionViewDelegateFlowLayout
             size = CGSize.init(width: w, height: h/3.0)
 
         case 1:
-            if secondCellExpanded == true {
-                size = CGSize.init(width: w, height: (h/3.0)*0.8)
-            } else {
-                size = CGSize.init(width: w, height: (h/3.0)*0.4)
-            }
+            size = CGSize.init(width: w, height: 150.0)
         case 2:
             size = CGSize.init(width: w, height: h )
 
@@ -164,21 +116,19 @@ extension ContainerCollectionViewController:  UICollectionViewDelegateFlowLayout
 
 
 extension ContainerCollectionViewController: RecordButtonDelegate {
-    
-   
-    
+  
     func recordButtonDidPress(){
-        switch secondCellExpanded{
+        switch AudioManager.shared.isRecording {
         case true:
-            print("contract")
-            secondCellExpanded = false
+            print("cv up")
+            UIView.animate(withDuration: 1.0, animations: {
+                self.cv.frame.origin.y = self.cv.frame.origin.y + 290.0
+            })
         case false:
-            print("expand")
-            secondCellExpanded = true
+            UIView.animate(withDuration: 1.0, animations: {
+                self.cv.frame.origin.y = self.cv.frame.origin.y  - 290.0
+            })
         }
-        self.cv.performBatchUpdates({ () -> Void in
-
-        })
     }
 
     
