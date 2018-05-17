@@ -17,4 +17,5 @@ protocol RecordButtonDelegate: class {
     
     func doneButtonDidPress()
     
+    func showWaveformView(state: Bool)
 }

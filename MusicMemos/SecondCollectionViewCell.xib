@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Inter-UI-Bold.ttf">
+        <array key="Inter-UI-Bold.otf">
             <string>InterUI-Bold</string>
         </array>
-        <array key="Inter-UI-Regular.otf">
+        <array key="Inter-UI-Regular.ttf">
             <string>InterUI-Regular</string>
         </array>
     </customFonts>
@@ -46,17 +46,6 @@
                         <constraint firstAttribute="height" constant="60" id="uEX-4x-JxL"/>
                     </constraints>
                     <state key="normal" image="playBtn"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikg-jS-yHU">
-                    <rect key="frame" x="260.5" y="96" width="44" height="34"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="44" id="IoV-1B-MdX"/>
-                        <constraint firstAttribute="height" constant="34" id="go0-gM-46g"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="InterUI-Bold" family="Inter UI" pointSize="18"/>
-                    <state key="normal" title="Done">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTe-dy-nna">
                     <rect key="frame" x="150" y="72" width="75" height="75"/>
@@ -106,7 +95,6 @@
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="i1y-vY-p9J" secondAttribute="bottom" constant="10" id="3ED-xy-E6e"/>
-                <constraint firstItem="ikg-jS-yHU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="95" id="5sz-Sf-HAK"/>
                 <constraint firstItem="8wy-Vg-kPh" firstAttribute="top" secondItem="dRR-4D-EBf" secondAttribute="bottom" constant="2" id="68V-cJ-1Px"/>
                 <constraint firstItem="8wy-Vg-kPh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="17" id="8DF-UN-PKp"/>
                 <constraint firstItem="pYO-HE-WZk" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="C8R-nw-Oel"/>
@@ -115,7 +103,6 @@
                 <constraint firstItem="yTe-dy-nna" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NXv-VL-4G3"/>
                 <constraint firstItem="dRR-4D-EBf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="Tht-75-RRo"/>
                 <constraint firstItem="i1y-vY-p9J" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-95" id="iwX-pR-UKq"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ikg-jS-yHU" secondAttribute="bottom" constant="20" id="pFg-ut-Guj"/>
                 <constraint firstItem="dRR-4D-EBf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="xUC-hE-xju"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -123,7 +110,6 @@
             <connections>
                 <outlet property="blackCircle" destination="jgv-G8-SM7" id="zVP-CF-GTt"/>
                 <outlet property="dateLabel" destination="8wy-Vg-kPh" id="KgP-tY-gVj"/>
-                <outlet property="doneBtn" destination="ikg-jS-yHU" id="eYw-R6-duU"/>
                 <outlet property="playBtn" destination="i1y-vY-p9J" id="3j8-S6-hxl"/>
                 <outlet property="recordBtn" destination="MNt-7o-A9Q" id="Wkf-2R-HvY"/>
                 <outlet property="recordingTitleLabel" destination="dRR-4D-EBf" id="vgY-EC-xuX"/>

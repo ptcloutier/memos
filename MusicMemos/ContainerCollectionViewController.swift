@@ -57,7 +57,9 @@ class ContainerCollectionViewController: UICollectionViewController {
         }
         if indexPath.row == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: secondCellID, for: indexPath) as! SecondCollectionViewCell
-            cell.setupRecordBtn()
+            
+            cell.setupButtons()
+            cell.setButtonsState()
             cell.setupRecordBtnDelegate(delegate: self)
             cell.dateLabel.text = AudioManager.shared.getDate()
             return cell
@@ -118,19 +120,27 @@ extension ContainerCollectionViewController:  UICollectionViewDelegateFlowLayout
 extension ContainerCollectionViewController: RecordButtonDelegate {
   
     func recordButtonDidPress(){
-        switch AudioManager.shared.isRecording {
+        
+     
+    }
+
+    func showWaveformView(state: Bool) {
+        
+        switch state {
         case true:
-            print("cv up")
             UIView.animate(withDuration: 1.0, animations: {
                 self.cv.frame.origin.y = self.cv.frame.origin.y + 290.0
+            }, completion: { (finished) in
+                print("show waveform")
             })
         case false:
             UIView.animate(withDuration: 1.0, animations: {
                 self.cv.frame.origin.y = self.cv.frame.origin.y  - 290.0
+            }, completion: { (finished) in
+                print("hide waveform")
             })
         }
     }
-
     
     func doneButtonDidPress() {
         let alertView = UIAlertController.init(title: "Save Voice Memo", message: "", preferredStyle: .actionSheet)

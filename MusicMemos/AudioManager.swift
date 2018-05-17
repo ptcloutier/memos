@@ -16,7 +16,7 @@ class AudioManager: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     static let shared = AudioManager()
 
     var isRecording = false
-    var isRecordingPaused = false
+    var isPaused = false
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     var numberOfRecords: Int = 0
@@ -93,8 +93,8 @@ class AudioManager: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     }
     
     
-    func recordFile() -> Int{
-        if audioRecorder == nil {
+    func recordFile() -> Bool {
+        
             numberOfRecords += 1
             let filename = getDirectory().appendingPathComponent("\(numberOfRecords).m4a")
             
@@ -106,12 +106,11 @@ class AudioManager: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
                 audioRecorder.delegate = self
                 audioRecorder.record()
                 print("Recording started")
-                return 1 // success
+                return true // success
             } catch {
-                return 0 // display alert
+                print("Recording failed")
+                return false // display alert
             }
-        }
-          return 1  // good enough 
     }
     
     
