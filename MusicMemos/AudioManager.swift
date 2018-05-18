@@ -11,10 +11,55 @@ import AVFoundation
 
 class AudioManager: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     
+    /* TODO: several states will need to be accounted for:
+    // recoding, recording paused, audiofile selected, playing, playing paused, editing
+    
+    Recording states
+    
+    Ready
+    
+    Play
+    —— pause
+    —— finish/save
+    —— edit
+    
+    Edit
+    - Shows whole waveform
+    - Can drag edit bar to edit and trim (Zoom in on edit bar drag )
+    - Can drag play bar (Does not zoom)
+    - cancel (go back to play view)
+    - delete
+    - play
+    - trim - trims audiofile and goes back to play view
+    
+    My shit ->
+    - Add sampling power by stretching color coded sections in this view
+    - Standard naming conventions (audiofile name - sample 1 ... 99)
+    - Samples will populate in tableview also (or maybe their own section or their own tableview)
+    - mixer controls
+    - Eq, pan, volume, lp filter, hp, reverb, delay, distortion, pitch, time, tremolo, repeater, audiobus apps,
+    
+    Record
+    —— pause
+    ———— playback
+    ———— finish/save */
+    
+    
+    enum RecorderState {
+        
+        case Ready
+        case ReadyAudiofileSelected
+        case Recording
+        case RecordingPaused
+        case Playing
+        case PlayingPaused
+        case Editing
+    }
     override private init() {}
     
     static let shared = AudioManager()
-
+    
+    var currentStateStatus: RecorderState = .Ready
     var isRecording = false
     var isPaused = false
     var recordingSession: AVAudioSession!

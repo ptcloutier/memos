@@ -22,7 +22,7 @@ class SecondCollectionViewCell: UICollectionViewCell {
     var doneBtn = UIButton()
     weak var recordBtnDelegate: RecordButtonDelegate?
     var showWaveform: Bool = true
-    
+  
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,42 +55,34 @@ class SecondCollectionViewCell: UICollectionViewCell {
     
     
     func setButtonsState(){
-        
-        // TODO: several states will need to be accounted for:
-        // recoding, recording paused, audiofile selected, playing, playing paused, editing
-        
-        switch showWaveform {
+       
+        switch AudioManager.shared.currentStateStatus {
             
-        case true:
-            
-            // button state: ready to record, no audiofile selected
+        case .Ready:
+            print("State - Ready")
             self.playBtn.isHidden = false
             self.doneBtn.isHidden = false
             self.recordingTitleLabel.isHidden = false
             self.dateLabel.isHidden = false
             self.timeLabel.isHidden = false
-            self.playBtn.isUserInteractionEnabled = false
             self.doneBtn.isUserInteractionEnabled = true
             self.playBtn.alpha = 0.5
             
-            // toggle state
-//            showWaveform = false
+
+        case .ReadyAudiofileSelected:
+            print("State - audiofile selected")
             
-        case false:
-            // buttons state change
-            self.playBtn.isHidden = true
-            self.doneBtn.isHidden = true
-            self.recordingTitleLabel.isHidden = true
-            self.dateLabel.isHidden = true
-            self.timeLabel.isHidden = true
-            
-//            self.doneBtn.titleLabel?.textColor = UIColor.white
-//            self.playBtn.alpha = 1.0
-//            self.doneBtn.isUserInteractionEnabled = true
-//            self.playBtn.isUserInteractionEnabled = true
-            
-            //toggle state
-//            showWaveform = true
+        case .Recording:
+            print(" State - Recording ")
+          
+        case .RecordingPaused:
+            print("State - Recording paused")
+        case .Playing:
+            print("State - Playing")
+        case .PlayingPaused:
+            print("State - Playing paused")
+        case .Editing:
+            print("State - editing")
         }
     }
 
@@ -99,8 +91,8 @@ class SecondCollectionViewCell: UICollectionViewCell {
         
         // TODO: recordingbuttondelegate method showwaveform works!!! use it later
                 
-        switch AudioManager.shared.isRecording {
-        case true:
+        
+        if AudioManager.shared.currentStateStatus == .Recording {
             
                 UIView.animate(withDuration: 0.5, animations: {
   
@@ -109,20 +101,17 @@ class SecondCollectionViewCell: UICollectionViewCell {
                 })
                 // messages
                 NotificationCenter.default.post(name: Notification.Name.init(reloadDataNotification), object: nil)
-                
-
-               
+         
                 // stop recording
                 AudioManager.shared.stopRecording()
-                
-                // toggle bool state
-                AudioManager.shared.isRecording = false
+            
+                // set state
+                AudioManager.shared.currentStateStatus = .RecordingPaused
                 setButtonsState()
                 
-        case false:
-            if AudioManager.shared.isPaused {
-                print("paused")
-            } else {
+        }
+        else if AudioManager.shared.currentStateStatus == .Ready || AudioManager.shared.currentStateStatus == .RecordingPaused || AudioManager.shared.currentStateStatus == .PlayingPaused {
+            
                 // messages
                 let success = AudioManager.shared.recordFile()
                 if success == false {
@@ -130,9 +119,7 @@ class SecondCollectionViewCell: UICollectionViewCell {
                 } else {
                     // TODO: send scroll message
                 }
-                
-                
-
+            
                 // animation
                 UIView.animate(withDuration: 0.5, animations: {
                     self.recordBtn.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
@@ -140,9 +127,8 @@ class SecondCollectionViewCell: UICollectionViewCell {
                 })
                 
                 // toggle bool state
-                AudioManager.shared.isRecording = true
+                AudioManager.shared.currentStateStatus = .Recording
                 setButtonsState()
-            }
         }
     }
     
@@ -164,6 +150,8 @@ class SecondCollectionViewCell: UICollectionViewCell {
     
     
     @objc func doneBtnDidPress(){
+        // option to save or delete
         recordBtnDelegate?.doneButtonDidPress()
+        // after action self.currentStateStatus = .Ready
     }
 }
