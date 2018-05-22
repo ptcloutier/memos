@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23F51F92D2F141B5D354B25C /* Pods_MusicMemos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88391A0D05E531F5D44297E6 /* Pods_MusicMemos.framework */; };
 		A7058CC820A7F7380060B654 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7058CC720A7F7380060B654 /* DataManager.swift */; };
 		A7058CCA20A7F8AA0060B654 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7058CC920A7F8AA0060B654 /* Recording.swift */; };
 		A78A720A20A1DAF500FF9D0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A720920A1DAF500FF9D0B /* AppDelegate.swift */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		88391A0D05E531F5D44297E6 /* Pods_MusicMemos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMemos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4E4CC8ACDC8272755DDCAA8 /* Pods-MusicMemos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMemos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMemos/Pods-MusicMemos.debug.xcconfig"; sourceTree = "<group>"; };
 		A7058CC720A7F7380060B654 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A7058CC920A7F8AA0060B654 /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		A78A720620A1DAF500FF9D0B /* MusicMemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicMemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +53,7 @@
 		A7B8E43620A2BE1B00B11BAA /* FlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 		A7D2750F20A3F7030071F5DF /* SecondCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondCollectionViewCell.xib; sourceTree = "<group>"; };
 		A7D2751120A3FFAA0071F5DF /* MMConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMConstants.swift; sourceTree = "<group>"; };
+		A919505C60D6D3D59B8CCE93 /* Pods-MusicMemos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMemos.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMemos/Pods-MusicMemos.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +61,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23F51F92D2F141B5D354B25C /* Pods_MusicMemos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27B3957F012852E44F4AA09B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4E4CC8ACDC8272755DDCAA8 /* Pods-MusicMemos.debug.xcconfig */,
+				A919505C60D6D3D59B8CCE93 /* Pods-MusicMemos.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A78A71FD20A1DAF500FF9D0B = {
 			isa = PBXGroup;
 			children = (
 				A78A720820A1DAF500FF9D0B /* MusicMemos */,
 				A78A720720A1DAF500FF9D0B /* Products */,
+				27B3957F012852E44F4AA09B /* Pods */,
+				C74028CD532EBD0D922BBA68 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +130,14 @@
 			path = icons;
 			sourceTree = "<group>";
 		};
+		C74028CD532EBD0D922BBA68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88391A0D05E531F5D44297E6 /* Pods_MusicMemos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -121,9 +145,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A78A721820A1DAF700FF9D0B /* Build configuration list for PBXNativeTarget "MusicMemos" */;
 			buildPhases = (
+				43785FB677DD2B40941487B1 /* [CP] Check Pods Manifest.lock */,
 				A78A720220A1DAF500FF9D0B /* Sources */,
 				A78A720320A1DAF500FF9D0B /* Frameworks */,
 				A78A720420A1DAF500FF9D0B /* Resources */,
+				6EF14AEE8B30FE8F98C3BD59 /* [CP] Embed Pods Frameworks */,
+				99DA824EB05DFC24D53769BE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,6 +210,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		43785FB677DD2B40941487B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MusicMemos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6EF14AEE8B30FE8F98C3BD59 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MusicMemos/Pods-MusicMemos-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FDWaveformView/FDWaveformView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDWaveformView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicMemos/Pods-MusicMemos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99DA824EB05DFC24D53769BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicMemos/Pods-MusicMemos-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A78A720220A1DAF500FF9D0B /* Sources */ = {
@@ -342,15 +423,13 @@
 		};
 		A78A721920A1DAF700FF9D0B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4E4CC8ACDC8272755DDCAA8 /* Pods-MusicMemos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LHVTYN77KH;
 				INFOPLIST_FILE = MusicMemos/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ptc.MusicMemos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -360,15 +439,13 @@
 		};
 		A78A721A20A1DAF700FF9D0B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A919505C60D6D3D59B8CCE93 /* Pods-MusicMemos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LHVTYN77KH;
 				INFOPLIST_FILE = MusicMemos/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ptc.MusicMemos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

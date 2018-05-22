@@ -52,7 +52,9 @@ class ContainerCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: firstCellID, for: indexPath) as! FirstCollectionViewCell
-            cell.backgroundColor = UIColor.red
+            cell.setupWaveformView()
+            let url = AudioManager.shared.getAudiofilePath(index: indexPath.row)
+            cell.waveformView?.audioURL = url 
             return cell
         }
         if indexPath.row == 1 {

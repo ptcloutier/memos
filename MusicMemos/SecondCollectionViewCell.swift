@@ -45,6 +45,9 @@ class SecondCollectionViewCell: UICollectionViewCell {
         blackCircle.layer.cornerRadius = blackCircle.frame.width/2.0
         whiteCircle.layer.cornerRadius = whiteCircle.frame.width/2.0
         recordBtn.layer.cornerRadius = recordBtn.frame.width/2.0
+       
+        // create done button programmatically
+        // TODO: position values are hard-coded 
         doneBtn = UIButton.init(frame: CGRect(x: self.contentView.frame.maxX - 150.0, y: self.contentView.frame.maxY - 75.0, width: 75.0, height: 50.0))
         doneBtn.addTarget(self, action: #selector(SecondCollectionViewCell.doneBtnDidPress), for: .touchUpInside)
         doneBtn.setTitle("Done", for: .normal)

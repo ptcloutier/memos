@@ -68,7 +68,7 @@ class AudioManager: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     var audioPlayer: AVAudioPlayer!
     var numberKey = "myNumber"
     let sampleRate = 12000
-    
+    var selectedAudiofile: Int = 0 
     
     
     func setupAudioSession(){
@@ -126,11 +126,17 @@ class AudioManager: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     }
     
     
+    func getAudiofilePath(index: Int) -> URL {
+        let path = getDirectory().appendingPathComponent("\(index+1).m4a")
+        return path
+    }
+    
+    
     func playFile(index: Int){
-        let path = AudioManager.shared.getDirectory().appendingPathComponent("\(index+1).m4a")
+        let path = getDirectory().appendingPathComponent("\(index+1).m4a")
         do {
-            AudioManager.shared.audioPlayer = try AVAudioPlayer(contentsOf: path)
-            AudioManager.shared.audioPlayer.play()
+            audioPlayer = try AVAudioPlayer(contentsOf: path)
+            audioPlayer.play()
         }
         catch {
             print("error playing file in didSelectRowAt")

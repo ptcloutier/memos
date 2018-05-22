@@ -92,10 +92,14 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         AudioManager.shared.playFile(index: indexPath.row)
-        // TODO: - Expand cells upon selection 
+        AudioManager.shared.selectedAudiofile = indexPath.row
+        // TODO: - Expand cells upon selection
         tableView.beginUpdates()
         tableView.endUpdates()
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+
     }
+    
 
 }
 
