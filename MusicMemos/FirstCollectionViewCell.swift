@@ -21,10 +21,13 @@ class FirstCollectionViewCell: UICollectionViewCell {
     }
     
     func setupWaveformView(){
-        
+        let url = AudioManager.shared.getAudiofilePath(index: AudioManager.shared.selectedAudiofile)
+        waveformView.audioURL = url 
         let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         waveformView.frame = frame
+        waveformView.backgroundColor = UIColor.orange
+        waveformView.wavesColor = UIColor.purple
+        waveformView.tintColor = UIColor.cyan
         self.contentView.addSubview(waveformView)
     }
-    
 }

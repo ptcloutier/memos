@@ -93,11 +93,14 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
         
         AudioManager.shared.playFile(index: indexPath.row)
         AudioManager.shared.selectedAudiofile = indexPath.row
+        
         // TODO: - Expand cells upon selection
         tableView.beginUpdates()
         tableView.endUpdates()
         tableView.scrollToRow(at: indexPath, at: .top, animated: true)
         print("selected audio file - \(AudioManager.shared.selectedAudiofile)")
+        NotificationCenter.default.post(name: Notification.Name.init(reloadWaveformNotification), object: nil)
+        
     }
 }
 

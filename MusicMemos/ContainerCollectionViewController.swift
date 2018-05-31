@@ -13,30 +13,35 @@ private let secondCellID = "SecondCell"
 private let thirdCellID = "ThirdCell"
 
 private let secondNib = "SecondCollectionViewCell"
-
+let reloadWaveformNotification = "reloadWaveformNotification"
 
 class ContainerCollectionViewController: UICollectionViewController {
     
     @IBOutlet var cv: UICollectionView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(ContainerCollectionViewController.reload), name: Notification.Name.init(reloadWaveformNotification), object: nil)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Register cell classes
         cv.register(FirstCollectionViewCell.self, forCellWithReuseIdentifier: firstCellID)
         cv.register(UINib(nibName: secondNib, bundle: nil), forCellWithReuseIdentifier: secondCellID)
         cv.register(ThirdCollectionViewCell.self, forCellWithReuseIdentifier: thirdCellID)
         let layout = FlowLayout.init(direction: .vertical, numberOfColumns: 1)
         cv.collectionViewLayout = layout
-        cv.isScrollEnabled = false 
-     }
-
-
-
+        cv.isScrollEnabled = false
+        
+    }
+    
+    @objc func reload(){
+        cv.reloadData()
+    }
+    
+    
     // MARK: Collectionview data source
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -53,8 +58,7 @@ class ContainerCollectionViewController: UICollectionViewController {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: firstCellID, for: indexPath) as! FirstCollectionViewCell
             cell.setupWaveformView()
-            let url = AudioManager.shared.getAudiofilePath(index: AudioManager.shared.selectedAudiofile)
-            cell.waveformView.audioURL = url 
+           
             return cell
         }
         if indexPath.row == 1 {
