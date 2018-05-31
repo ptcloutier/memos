@@ -97,9 +97,7 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
         tableView.beginUpdates()
         tableView.endUpdates()
         tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-
+        print("selected audio file - \(AudioManager.shared.selectedAudiofile)")
     }
-    
-
 }
 

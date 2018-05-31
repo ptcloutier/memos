@@ -53,8 +53,8 @@ class ContainerCollectionViewController: UICollectionViewController {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: firstCellID, for: indexPath) as! FirstCollectionViewCell
             cell.setupWaveformView()
-            let url = AudioManager.shared.getAudiofilePath(index: indexPath.row)
-            cell.waveformView?.audioURL = url 
+            let url = AudioManager.shared.getAudiofilePath(index: AudioManager.shared.selectedAudiofile)
+            cell.waveformView.audioURL = url 
             return cell
         }
         if indexPath.row == 1 {
@@ -75,7 +75,9 @@ class ContainerCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDelegate
 
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+         
+    }
 }
 
 

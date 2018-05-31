@@ -10,7 +10,8 @@ import UIKit
 
 class FirstCollectionViewCell: UICollectionViewCell {
   
-    var waveformView: FDWaveformView?
+    var waveformView = FDWaveformView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -21,10 +22,9 @@ class FirstCollectionViewCell: UICollectionViewCell {
     
     func setupWaveformView(){
         
-        waveformView = FDWaveformView.init()
         let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
-        waveformView?.frame = frame
-        self.contentView.addSubview(waveformView!)
+        waveformView.frame = frame
+        self.contentView.addSubview(waveformView)
     }
     
 }
