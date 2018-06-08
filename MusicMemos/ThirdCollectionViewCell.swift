@@ -19,11 +19,9 @@ let reloadDataNotification = "ReloadDataNotification"
 class ThirdCollectionViewCell: UICollectionViewCell, AVAudioRecorderDelegate {
     
     weak var recordBtnDelegate: RecordButtonDelegate?
-    
     var recordBtn: UIButton!
-    
     var tableView = UITableView()
-    
+    var cellID = 0
     
     
     override init(frame: CGRect) {
@@ -35,7 +33,6 @@ class ThirdCollectionViewCell: UICollectionViewCell, AVAudioRecorderDelegate {
     }
     
     func setupTableView(){
-        
 
         tableView = UITableView(frame: self.bounds, style: UITableViewStyle.plain)
         tableView.dataSource = self
@@ -58,7 +55,14 @@ class ThirdCollectionViewCell: UICollectionViewCell, AVAudioRecorderDelegate {
 extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+        if cellID == AudioManager.shared.selectedAudiofile {
+            print("tvcell no. - \(self.cellID) h - 150 ")
+            return 150.0
+        } else {
+            print("tvcell no. - \(self.cellID) h - 75 ")
             return 75.0
+        }
     }
     
     
@@ -74,6 +78,8 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: recordingsTableViewCellReuseIdentifier) as! RecordingsTableViewCell
         
+        cellID = indexPath.row
+        print("tvcell id for row - \(indexPath.row)")
          cell.recordingNameLabel.text = "recording #\(indexPath.row+1)"
 
         let duration = AudioManager.shared.getAudioFileDuration(index: indexPath.row)
@@ -95,11 +101,12 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
         AudioManager.shared.selectedAudiofile = indexPath.row
         
         // TODO: - Expand cells upon selection
-//        tableView.beginUpdates()
-//        tableView.endUpdates()
-//        NotificationCenter.default.post(name: Notification.Name.init(reloadWaveformNotification), object: nil)
-//        print("no. of records - \(AudioManager.shared.numberOfRecords)/n selected audio file - \(AudioManager.shared.selectedAudiofile)")
-//        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        tableView.beginUpdates()
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+
+        tableView.endUpdates()
+        NotificationCenter.default.post(name: Notification.Name.init(reloadWaveformNotification), object: nil)
+        print("no. of records - \(AudioManager.shared.numberOfRecords)/n selected audio file - \(AudioManager.shared.selectedAudiofile)")
 
     }
 }
