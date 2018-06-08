@@ -95,15 +95,14 @@ extension ContainerCollectionViewController:  UICollectionViewDelegateFlowLayout
         let w = collectionView.frame.size.width
         let h = collectionView.frame.size.height
         
+        
         switch indexPath.row  {
         case 0:
             size = CGSize.init(width: w, height: h/3.0)
-
         case 1:
             size = CGSize.init(width: w, height: 150.0)
         case 2:
-            size = CGSize.init(width: w, height: h )
-
+            size = CGSize.init(width: w, height: h - (h/3.0) - 150.0)
         default:
             size = CGSize.init(width: w, height: h/3.0)
         }

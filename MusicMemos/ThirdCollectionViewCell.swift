@@ -37,7 +37,7 @@ class ThirdCollectionViewCell: UICollectionViewCell, AVAudioRecorderDelegate {
     func setupTableView(){
         
 
-        tableView = UITableView(frame: self.contentView.bounds, style: UITableViewStyle.plain)
+        tableView = UITableView(frame: self.bounds, style: UITableViewStyle.plain)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib.init(nibName: recordingsTableViewCellNibName, bundle: nil), forCellReuseIdentifier: recordingsTableViewCellReuseIdentifier)
@@ -95,12 +95,12 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
         AudioManager.shared.selectedAudiofile = indexPath.row
         
         // TODO: - Expand cells upon selection
-        tableView.beginUpdates()
-        tableView.endUpdates()
-        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-        print("selected audio file - \(AudioManager.shared.selectedAudiofile)")
-        NotificationCenter.default.post(name: Notification.Name.init(reloadWaveformNotification), object: nil)
-        
+//        tableView.beginUpdates()
+//        tableView.endUpdates()
+//        NotificationCenter.default.post(name: Notification.Name.init(reloadWaveformNotification), object: nil)
+//        print("no. of records - \(AudioManager.shared.numberOfRecords)/n selected audio file - \(AudioManager.shared.selectedAudiofile)")
+//        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+
     }
 }
 
