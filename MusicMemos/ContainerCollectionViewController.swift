@@ -24,10 +24,6 @@ class ContainerCollectionViewController: UICollectionViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(ContainerCollectionViewController.reload), name: Notification.Name.init(reloadWaveformNotification), object: nil)
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Register cell classes
         cv.register(FirstCollectionViewCell.self, forCellWithReuseIdentifier: firstCellID)
         cv.register(UINib(nibName: secondNib, bundle: nil), forCellWithReuseIdentifier: secondCellID)
         cv.register(ThirdCollectionViewCell.self, forCellWithReuseIdentifier: thirdCellID)
@@ -73,6 +69,9 @@ class ContainerCollectionViewController: UICollectionViewController {
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: thirdCellID, for: indexPath) as! ThirdCollectionViewCell
             cell.setupTableView()
+            let idx = IndexPath(row: AudioManager.shared.selectedAudiofile, section: 0)
+            cell.tableView.scrollToRow(at: idx, at: .top, animated: true)
+
             return cell
         }
     }

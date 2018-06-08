@@ -57,11 +57,9 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
         if cellID == AudioManager.shared.selectedAudiofile {
-            print("tvcell no. - \(self.cellID) h - 150 ")
-            return 150.0
+             return 150.0
         } else {
-            print("tvcell no. - \(self.cellID) h - 75 ")
-            return 75.0
+             return 75.0
         }
     }
     
@@ -79,8 +77,7 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: recordingsTableViewCellReuseIdentifier) as! RecordingsTableViewCell
         
         cellID = indexPath.row
-        print("tvcell id for row - \(indexPath.row)")
-         cell.recordingNameLabel.text = "recording #\(indexPath.row+1)"
+        cell.recordingNameLabel.text = "recording #\(indexPath.row+1)"
 
         let duration = AudioManager.shared.getAudioFileDuration(index: indexPath.row)
 
@@ -99,15 +96,9 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
         
         AudioManager.shared.playFile(index: indexPath.row)
         AudioManager.shared.selectedAudiofile = indexPath.row
-        
-        // TODO: - Expand cells upon selection
-        tableView.beginUpdates()
-        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-
-        tableView.endUpdates()
+ 
         NotificationCenter.default.post(name: Notification.Name.init(reloadWaveformNotification), object: nil)
         print("no. of records - \(AudioManager.shared.numberOfRecords)/n selected audio file - \(AudioManager.shared.selectedAudiofile)")
-
     }
 }
 
