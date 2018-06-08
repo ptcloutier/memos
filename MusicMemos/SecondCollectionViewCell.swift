@@ -40,7 +40,14 @@ class SecondCollectionViewCell: UICollectionViewCell {
     
     
     func setupButtons(){
-        recordBtn.layer.borderColor = UIColor.black.cgColor
+        let recBtnBackColor = SCColor.BrighterHigherSatColor(color: SCColor.Custom.PsychedelicIceCreamShoppe.brightCoral)
+        let recbtnBrderColor = SCColor.BrighterHigherSatColor(color: SCColor.Custom.PsychedelicIceCreamShoppe.lighterBlue).cgColor
+        let blckBackColor = SCColor.BrighterHigherSatColor(color: SCColor.Custom.PsychedelicIceCreamShoppe.neonAqua)
+        let whteCircColor = SCColor.BrighterHigherSatColor(color: SCColor.Custom.PsychedelicIceCreamShoppe.darkViolet)
+        recordBtn.backgroundColor = recBtnBackColor
+        recordBtn.layer.borderColor = recbtnBrderColor
+        blackCircle.backgroundColor = blckBackColor
+        whiteCircle.backgroundColor = whteCircColor
         recordBtn.layer.borderWidth = 2.0
         blackCircle.layer.cornerRadius = blackCircle.frame.width/2.0
         whiteCircle.layer.cornerRadius = whiteCircle.frame.width/2.0
@@ -53,6 +60,7 @@ class SecondCollectionViewCell: UICollectionViewCell {
         doneBtn.setTitle("Done", for: .normal)
         doneBtn.titleLabel?.textColor = UIColor.white
         doneBtn.titleLabel?.font = UIFont(name: "Inter UI Bold", size: 30.0)
+        
         self.addSubview(doneBtn)
     }
     

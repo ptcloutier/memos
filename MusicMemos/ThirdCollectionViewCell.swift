@@ -34,7 +34,7 @@ class ThirdCollectionViewCell: UICollectionViewCell, AVAudioRecorderDelegate {
     
     func setupTableView(){
 
-        tableView = UITableView(frame: self.bounds, style: UITableViewStyle.plain)
+        tableView = UITableView(frame: self.bounds, style: .plain)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib.init(nibName: recordingsTableViewCellNibName, bundle: nil), forCellReuseIdentifier: recordingsTableViewCellReuseIdentifier)
@@ -88,6 +88,7 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
         }
         let recordingDate = AudioManager.shared.getDate()
         cell.dateLabel.text = recordingDate
+        
         return cell
     }
     

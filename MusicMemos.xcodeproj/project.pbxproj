@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		23F51F92D2F141B5D354B25C /* Pods_MusicMemos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88391A0D05E531F5D44297E6 /* Pods_MusicMemos.framework */; };
 		A7058CC820A7F7380060B654 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7058CC720A7F7380060B654 /* DataManager.swift */; };
-		A7058CCA20A7F8AA0060B654 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7058CC920A7F8AA0060B654 /* Recording.swift */; };
 		A78A720A20A1DAF500FF9D0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A720920A1DAF500FF9D0B /* AppDelegate.swift */; };
 		A78A720F20A1DAF500FF9D0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78A720D20A1DAF500FF9D0B /* Main.storyboard */; };
 		A78A721120A1DAF700FF9D0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A78A721020A1DAF700FF9D0B /* Assets.xcassets */; };
@@ -20,6 +19,7 @@
 		A78A722620A1DB9600FF9D0B /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A721F20A1DB9500FF9D0B /* AudioManager.swift */; };
 		A78A722820A1DB9600FF9D0B /* RecordingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A722120A1DB9600FF9D0B /* RecordingsTableViewCell.swift */; };
 		A78A723020A1DC1A00FF9D0B /* playBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = A78A722F20A1DC1A00FF9D0B /* playBtn.png */; };
+		A7A992E120CADDAA000A49CD /* SCColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A992E020CADDAA000A49CD /* SCColor.swift */; };
 		A7B8E42F20A2B7F200B11BAA /* ContainerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8E42E20A2B7F200B11BAA /* ContainerCollectionViewController.swift */; };
 		A7B8E43120A2B93D00B11BAA /* FirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8E43020A2B93D00B11BAA /* FirstCollectionViewCell.swift */; };
 		A7B8E43320A2B94900B11BAA /* SecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8E43220A2B94900B11BAA /* SecondCollectionViewCell.swift */; };
@@ -33,7 +33,6 @@
 		88391A0D05E531F5D44297E6 /* Pods_MusicMemos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMemos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E4CC8ACDC8272755DDCAA8 /* Pods-MusicMemos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMemos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMemos/Pods-MusicMemos.debug.xcconfig"; sourceTree = "<group>"; };
 		A7058CC720A7F7380060B654 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		A7058CC920A7F8AA0060B654 /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		A78A720620A1DAF500FF9D0B /* MusicMemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicMemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78A720920A1DAF500FF9D0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A78A720E20A1DAF500FF9D0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,6 +45,7 @@
 		A78A721F20A1DB9500FF9D0B /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		A78A722120A1DB9600FF9D0B /* RecordingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingsTableViewCell.swift; sourceTree = "<group>"; };
 		A78A722F20A1DC1A00FF9D0B /* playBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBtn.png; sourceTree = "<group>"; };
+		A7A992E020CADDAA000A49CD /* SCColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCColor.swift; sourceTree = "<group>"; };
 		A7B8E42E20A2B7F200B11BAA /* ContainerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCollectionViewController.swift; sourceTree = "<group>"; };
 		A7B8E43020A2B93D00B11BAA /* FirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7B8E43220A2B94900B11BAA /* SecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 				A78A721B20A1DB9500FF9D0B /* RecordingsTableViewCell.xib */,
 				A78A721F20A1DB9500FF9D0B /* AudioManager.swift */,
 				A7058CC720A7F7380060B654 /* DataManager.swift */,
-				A7058CC920A7F8AA0060B654 /* Recording.swift */,
+				A7A992E020CADDAA000A49CD /* SCColor.swift */,
 				A78A723120A1DC3000FF9D0B /* icons */,
 				A78A721D20A1DB9500FF9D0B /* fonts */,
 				A78A721020A1DAF700FF9D0B /* Assets.xcassets */,
@@ -275,9 +275,9 @@
 				A7B8E43520A2B95300B11BAA /* ThirdCollectionViewCell.swift in Sources */,
 				A7B8E43320A2B94900B11BAA /* SecondCollectionViewCell.swift in Sources */,
 				A78A722820A1DB9600FF9D0B /* RecordingsTableViewCell.swift in Sources */,
+				A7A992E120CADDAA000A49CD /* SCColor.swift in Sources */,
 				A78A720A20A1DAF500FF9D0B /* AppDelegate.swift in Sources */,
 				A78A722620A1DB9600FF9D0B /* AudioManager.swift in Sources */,
-				A7058CCA20A7F8AA0060B654 /* Recording.swift in Sources */,
 				A7B8E43120A2B93D00B11BAA /* FirstCollectionViewCell.swift in Sources */,
 				A7058CC820A7F7380060B654 /* DataManager.swift in Sources */,
 				A7D2751220A3FFAA0071F5DF /* MMConstants.swift in Sources */,
@@ -429,7 +429,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LHVTYN77KH;
 				INFOPLIST_FILE = MusicMemos/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ptc.MusicMemos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -445,7 +448,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LHVTYN77KH;
 				INFOPLIST_FILE = MusicMemos/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ptc.MusicMemos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
