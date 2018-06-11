@@ -97,8 +97,11 @@ extension ThirdCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
         
         AudioManager.shared.playFile(index: indexPath.row)
         AudioManager.shared.selectedAudiofile = indexPath.row
- 
-        NotificationCenter.default.post(name: Notification.Name.init(reloadWaveformNotification), object: nil)
+// 
+//        NotificationCenter.default.post(name: Notification.Name.init(reloadWaveformNotification), object: nil)
+        let idx = IndexPath(row: AudioManager.shared.selectedAudiofile, section: 0)
+        tableView.scrollToRow(at: idx, at: .top, animated: true)
+
         print("no. of records - \(AudioManager.shared.numberOfRecords)/n selected audio file - \(AudioManager.shared.selectedAudiofile)")
     }
 }

@@ -69,9 +69,6 @@ class ContainerCollectionViewController: UICollectionViewController {
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: thirdCellID, for: indexPath) as! ThirdCollectionViewCell
             cell.setupTableView()
-            let idx = IndexPath(row: AudioManager.shared.selectedAudiofile, section: 0)
-            cell.tableView.scrollToRow(at: idx, at: .top, animated: true)
-
             return cell
         }
     }
@@ -79,7 +76,6 @@ class ContainerCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-         
     }
 }
 
